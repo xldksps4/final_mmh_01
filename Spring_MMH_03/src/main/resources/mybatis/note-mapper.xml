@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="note">
+  
+  <resultMap type="noteDto" id="noteMap">
+  	<result property="opno" column="O_P_NO"/>
+  	<result property="nno" column="N_NO"/>
+  	<result property="ncontent" column="N_CONTENT"/>
+  	<result property="nwidth" column="N_WIDTH"/>
+  	<result property="nheight" column="N_HEIGHT"/>
+  	<result property="ntop" column="N_TOP"/>
+  	<result property="nleft" column="N_LEFT"/>
+  	<result property="nz" column="N_Z"/>
+  </resultMap>
+  
+  
+  <select id="selectList" resultMap="boardMap">
+  	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z
+  	FROM MMH_NOTE
+  	ORDER BY O_P_NO DESC
+  </select>
+  
+  <select id="selectOne" parameterType="int" resultMap="boardMap">
+  	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z FROM MMH_NOTE WHERE O_P_NO=#{opno}
+  </select>
+  
+  <insert id="insert" parameterType="boardDto">
+  	INSERT INTO MMH_NOTE VALUES(O_P_NO, #{nno}, #{ncontent}, #{nwidth}, #{nheight}, #{nwidth}, #{nheight}, #{ntop}, #{nleft}, #{nz})
+  </insert>
+  
+  <update id="update" parameterType="boardDto">
+  	UPDATE MMH_NOTE SET N_WIDTH = #{nwidth}, N_HEIGHT = #{nheight}, N_TOP=#{ntop}, N_LEFT=#{nleft}, N_Z=#{nz} 
+  	WHERE O_P_NO = #{opno} 
+  </update>
+  
+  <delete id="delete" parameterType="int">
+  	DELETE FROM MMH_NOTE WHERE O_P_NO=#{opno} 
+  </delete>
+</mapper>

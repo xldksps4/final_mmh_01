@@ -7,38 +7,38 @@
 	
 	<!-- db.properteis -->
 	<!-- classpath: = ? src/main/resources 를 자동으로 연결해줌 -->
-	<!-- <bean
+	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>classpath:mybatis/db.properties</value>
 			</list>
 		</property>
-	</bean> -->
+	</bean>
 	
 	<!-- dataSource -->
-	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${driver}"/>
 		<property name="url" value="${url}"/>
 		<property name="username" value="${username}"/>
 		<property name="password" value="${password}"/>
-	</bean> -->
+	</bean>
 	
 	<!-- mybatis (sqlSessionFactory)-->
-	<!-- <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="WEB-INF/spring/sqls/config.xml"/>
-	</bean> -->
+	</bean>
 	
 	<!-- mybatis (sqlSessionTemplate) -->
-	<!-- <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSession"/>
-	</bean> -->
+	</bean>
 	
 	<!-- transactionManager -->
-	<!-- <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/>
 		
-	</bean> -->
+	</bean>
 		
 </beans>
