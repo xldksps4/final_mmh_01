@@ -18,7 +18,7 @@ public class MindBizImpl implements MindBiz {
 	@Override
 	public List<MindDto> selectList() {
 		// TODO Auto-generated method stub
-		return dao.selecList();
+		return dao.selectList();
 	}
 
 	@Override
@@ -50,8 +50,8 @@ public class MindBizImpl implements MindBiz {
 	public String test() {
 		dao.insert(new MindDto());
 		
-		String test = dao.test(); //¿À·ù³ª´Â ÄÚµå
-		test.length(); 			  //¿À·ù°¡ ³ª¾ß ÇÏ´Â ÄÚµå
+		String test = dao.test(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
+		test.length(); 			  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½Úµï¿½
 		return null;
 	}
 

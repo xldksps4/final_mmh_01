@@ -9,24 +9,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.idea.mmh.model.dto.MindDto;
+import com.idea.mmh.model.dto.NoteDto;
 
 @Repository
-public class MindDaoImpl implements MindDao{
+public class NoteDaoImpl implements NoteDao {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession; // SqlSessionTemplate : SqlSessionFactory.OpenSession ... close ���� �˾Ƽ� ���ݴϴ�.
 	
-	private static final Logger logger = LoggerFactory.getLogger(MindDaoImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(NoteDaoImpl.class);
 	
 	@Override
-	public List<MindDto> selectList() {
-		List<MindDto> list = new ArrayList<MindDto>();
+	public List<NoteDto> selectList() {
+		List<NoteDto> list = new ArrayList<NoteDto>();
 		
 		try {
 			list = sqlSession.selectList(NAMESPACE+"selectList");
 		} catch (Exception e) {
-			logger.info("에러 발생 : MindDaoImpl.selectlist");
+			logger.info("에러 발생 : NoteDaoImpl.selectlist");
 			e.printStackTrace();
 		}
 		
@@ -34,21 +34,16 @@ public class MindDaoImpl implements MindDao{
 	}
 
 	@Override
-	public MindDto selectOne(int opno) {
-		MindDto rs = null;
+	public NoteDto selectOne(int opno) {
+		NoteDto rs = null;
 		
-		try {
-			rs = sqlSession.selectOne(NAMESPACE+"selectOne",opno);
-		} catch (Exception e) {
-			logger.info("에러 발생 : MindDaoImpl.selectOne");
-			e.printStackTrace();
-		}
+		rs = sqlSession.selectOne(NAMESPACE+"selectOne",opno);
 		
 		return rs;
 	}
 
 	@Override
-	public int insert(MindDto dto) {
+	public int insert(NoteDto dto) {
 		int res = 0;
 		
 		res = sqlSession.insert(NAMESPACE+"insert",dto);
@@ -57,7 +52,7 @@ public class MindDaoImpl implements MindDao{
 	}
 
 	@Override
-	public int update(MindDto dto) {
+	public int update(NoteDto dto) {
 		int res = 0;
 		
 		res = sqlSession.update(NAMESPACE+"update",dto);

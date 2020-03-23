@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회의록 작성 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h1>하하하핫</h1>
+
+	<h1> 전역 예외처리 되었습니다.</h1>
 </body>
 </html>

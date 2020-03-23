@@ -8,7 +8,7 @@ public interface MindDao {
 
 	String NAMESPACE = "mind.";
 	
-	public List<MindDto> selecList();
+	public List<MindDto> selectList();
 	public MindDto selectOne(int opno);
 	public int insert(MindDto dto);
 	public int update(MindDto dto);

@@ -14,21 +14,21 @@
   </resultMap>
   
   
-  <select id="selectList" resultMap="boardMap">
+  <select id="selectList" resultMap="noteMap">
   	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z
   	FROM MMH_NOTE
   	ORDER BY O_P_NO DESC
   </select>
   
-  <select id="selectOne" parameterType="int" resultMap="boardMap">
+  <select id="selectOne" parameterType="int" resultMap="noteMap">
   	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z FROM MMH_NOTE WHERE O_P_NO=#{opno}
   </select>
   
-  <insert id="insert" parameterType="boardDto">
+  <insert id="insert" parameterType="noteDto">
   	INSERT INTO MMH_NOTE VALUES(O_P_NO, #{nno}, #{ncontent}, #{nwidth}, #{nheight}, #{nwidth}, #{nheight}, #{ntop}, #{nleft}, #{nz})
   </insert>
   
-  <update id="update" parameterType="boardDto">
+  <update id="update" parameterType="noteDto">
   	UPDATE MMH_NOTE SET N_WIDTH = #{nwidth}, N_HEIGHT = #{nheight}, N_TOP=#{ntop}, N_LEFT=#{nleft}, N_Z=#{nz} 
   	WHERE O_P_NO = #{opno} 
   </update>
