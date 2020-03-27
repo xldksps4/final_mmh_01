@@ -46,7 +46,12 @@ public class PoitDaoImpl implements PoitDao {
 	public int insert(PoitDto dto) {
 		int res = 0;
 		
-		res = sqlSession.insert(NAMESPACE+"insert",dto);
+		try {
+			res = sqlSession.insert(NAMESPACE+"insert",dto);
+		} catch (Exception e) {
+			logger.info("asdfsadfasdfasdf 포스트잇 인서트 다오다오");
+			e.printStackTrace();
+		}
 		
 		return res;
 	}

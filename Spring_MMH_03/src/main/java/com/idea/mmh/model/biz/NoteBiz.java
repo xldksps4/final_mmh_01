@@ -10,7 +10,7 @@ public interface NoteBiz {
 	public NoteDto selectOne(int opno);
 	public int insert(NoteDto dto);
 	public int update(NoteDto dto);
-	public int delect(int opno);
+	public int delete(int opno);
 	
 	public String test();
 }

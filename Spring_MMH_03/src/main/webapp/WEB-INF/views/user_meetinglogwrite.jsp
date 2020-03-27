@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>하하하핫</h1>
+	<!-- % include file= 하면 뜹니다. -->
 </body>
 </html>

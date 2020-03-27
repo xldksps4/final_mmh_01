@@ -46,7 +46,12 @@ public class NoteDaoImpl implements NoteDao {
 	public int insert(NoteDto dto) {
 		int res = 0;
 		
-		res = sqlSession.insert(NAMESPACE+"insert",dto);
+		try {
+			res = sqlSession.insert(NAMESPACE+"insert",dto);
+		} catch (Exception e) {
+			logger.info("서머노드 저장중 에러 발생");
+			e.printStackTrace();
+		}
 		
 		return res;
 	}

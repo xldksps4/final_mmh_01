@@ -3,28 +3,28 @@ package com.idea.mmh.model.dto;
 // MMH_NOTE
 public class NoteDto {
 
-	// °íÀ¯ÇÁ·ÎÁ§Æ®³Ñ¹ö
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ñ¹ï¿½
 	private int opno;
 
-	// ±Û¹øÈ£
+	// ï¿½Û¹ï¿½È£
 	private int nno;
 
-	// ±Û³»¿ë
+	// ï¿½Û³ï¿½ï¿½ï¿½
 	private String ncontent;
 
-	// ±Û³Êºñ
+	// ï¿½Û³Êºï¿½
 	private Float nwidth;
 
-	// ±Û³ôÀÌ
+	// ï¿½Û³ï¿½ï¿½ï¿½
 	private Float nheight;
 
-	// ±ÛÀ§Ä¡(À§ÂÊ)
+	// ï¿½ï¿½ï¿½ï¿½Ä¡(ï¿½ï¿½ï¿½ï¿½)
 	private Float ntop;
 
-	// ±ÛÀ§Ä¡(¿ÞÂÊ)
+	// ï¿½ï¿½ï¿½ï¿½Ä¡(ï¿½ï¿½ï¿½ï¿½)
 	private Float nleft;
 
-	// ±ÛÀ§Ä¡('Z')
+	// ï¿½ï¿½ï¿½ï¿½Ä¡('Z')
 	private Float nz;
 
 	public NoteDto() {
@@ -107,7 +107,7 @@ public class NoteDto {
 		this.nz = nz;
 	}
 
-	// °Ô½ÃÆÇ ¸ðµ¨ º¹»ç
+	// ì„œë¨¸ë…¸íŠ¸ ì¹´í”¼
 	public void CopyData(NoteDto param) {
 		this.opno = param.getOpno();
 		this.nno = param.getNno();

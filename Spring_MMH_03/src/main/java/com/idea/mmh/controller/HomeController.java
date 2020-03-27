@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -42,6 +43,16 @@ public class HomeController {
 		logger.info("여기는 meeting페이지로 넘어가는 컨트롤러입니다.");
 		
 		return "user_meetinglogwrite";
+	}
+	
+	@GetMapping("/write.do")
+	public String boardWrite() {
+		return "boardwrite";
+	}
+	
+	@GetMapping("/writejh.do")
+	public String boardWriteJh() {
+		return "boardwritejh";
 	}
 	
 }

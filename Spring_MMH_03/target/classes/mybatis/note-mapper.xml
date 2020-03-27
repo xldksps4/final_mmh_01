@@ -24,8 +24,10 @@
   	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z FROM MMH_NOTE WHERE O_P_NO=#{opno}
   </select>
   
+  <!-- 게시판 insert -->
   <insert id="insert" parameterType="noteDto">
-  	INSERT INTO MMH_NOTE VALUES(O_P_NO, #{nno}, #{ncontent}, #{nwidth}, #{nheight}, #{nwidth}, #{nheight}, #{ntop}, #{nleft}, #{nz})
+  	INSERT INTO MMH_NOTE 
+  	VALUES(450, MMH_NOTE_SEQ.NEXTVAL, #{ncontent}, #{nwidth},#{nheight},#{ntop},#{nleft},1)
   </insert>
   
   <update id="update" parameterType="noteDto">
