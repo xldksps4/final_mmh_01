@@ -12,7 +12,6 @@ import com.idea.mmh.model.dao.NoteDao;
 import com.idea.mmh.model.dto.NoteDto;
 
 @Service
-@Transactional
 public class NoteBizImpl implements NoteBiz{
 
 	private Logger logger = LoggerFactory.getLogger(NoteBizImpl.class);
@@ -35,6 +34,8 @@ public class NoteBizImpl implements NoteBiz{
 	@Override
 	public int insert(NoteDto dto) {
 		logger.info("bizimpl입니다.");
+		//parseInt로 형변환 어떻게 하지
+//		Integer.parseInt(dto.getNheight());
 		return dao.insert(dto);
 	}
 
@@ -51,8 +52,13 @@ public class NoteBizImpl implements NoteBiz{
 	}
 
 	@Override
+	@Transactional
 	public String test() {
 		// TODO Auto-generated method stub
+		dao.insert(new NoteDto(450, 0,"transaction","developer","test_test")); //정상적인 코드
+		
+		String test = dao.test();	//오류나는 코드
+		test.length();				//오류가 나야하는 코드
 		return null;
 	}
 

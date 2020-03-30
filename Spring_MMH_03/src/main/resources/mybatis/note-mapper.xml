@@ -15,27 +15,27 @@
   
   
   <select id="selectList" resultMap="noteMap">
-  	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z
+  	SELECT O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT
   	FROM MMH_NOTE
   	ORDER BY O_P_NO DESC
   </select>
   
   <select id="selectOne" parameterType="int" resultMap="noteMap">
-  	SELECT O_P_NO, N_NO, N_CONTENT, N_WIDTH, N_HEIGHT, N_TOP, N_LEFT, N_Z FROM MMH_NOTE WHERE O_P_NO=#{opno}
+  	SELECT O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT FROM MMH_NOTE WHERE N_NO=#{nno}
   </select>
   
   <!-- 게시판 insert -->
   <insert id="insert" parameterType="noteDto">
-  	INSERT INTO MMH_NOTE 
-  	VALUES(450, MMH_NOTE_SEQ.NEXTVAL, #{ncontent}, #{nwidth},#{nheight},#{ntop},#{nleft},1)
+  	INSERT INTO MMH_NOTE  (opno, nno, ntitle, nwriter, ncontent) 
+  	VALUES(450, MMH_NOTE_SEQ.NEXTVAL, #{ntitle}, "#{nwriter}", #{ncontent})
   </insert>
   
   <update id="update" parameterType="noteDto">
-  	UPDATE MMH_NOTE SET N_WIDTH = #{nwidth}, N_HEIGHT = #{nheight}, N_TOP=#{ntop}, N_LEFT=#{nleft}, N_Z=#{nz} 
-  	WHERE O_P_NO = #{opno} 
+  	UPDATE MMH_NOTE SET N_TITLE = #{ntitle}, N_WRITER = #{nwriter}, N_CONTENT = #{ncontent}  
+  	WHERE N_NO = #{nno}, 
   </update>
   
   <delete id="delete" parameterType="int">
-  	DELETE FROM MMH_NOTE WHERE O_P_NO=#{opno} 
+  	DELETE FROM MMH_NOTE WHERE N_NO=#{nno} 
   </delete>
 </mapper>

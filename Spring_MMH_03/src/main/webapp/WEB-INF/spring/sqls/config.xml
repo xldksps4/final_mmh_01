@@ -14,4 +14,16 @@
 		<mapper resource="/mybatis/note-mapper.xml"/>
 		<mapper resource="/mybatis/poit-mapper.xml"/>
 	</mappers>
+	
+<!--  settings태그에 setting 프로퍼티를 추가하면 
+           매퍼에서 jdbcType=VARCHAR와 같은 처리를 매번 해주지 않아도 된다네요.
+                     ※근데 지금은 configuration에서 ERROR표기되어 주석처리함
+                     
+             	       정보 출처 : https://haenny.tistory.com/22
+
+	<settings>
+		<setting name="cacheEnabled" value="false"/>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+-->
 </configuration>

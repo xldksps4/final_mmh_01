@@ -2,45 +2,32 @@ package com.idea.mmh.model.dto;
 
 // MMH_NOTE
 public class NoteDto {
+//--INSERT INTO MMH_NOTE VALUES(고유프로젝트번호, 회의록번호, 제목, 작성자(ID), 내용);
 
-	// ����������Ʈ�ѹ�
 	private int opno;
 
-	// �۹�ȣ
 	private int nno;
 
-	// �۳���
+	private String ntitle;
+
+	private String nwriter;
+
 	private String ncontent;
 
-	// �۳ʺ�
-	private Float nwidth;
-
-	// �۳���
-	private Float nheight;
-
-	// ����ġ(����)
-	private Float ntop;
-
-	// ����ġ(����)
-	private Float nleft;
-
-	// ����ġ('Z')
-	private Float nz;
-
+	
+	
+	
 	public NoteDto() {
-
+		super();
 	}
 
-	public NoteDto(int opno, int nno, String ncontent, Float nwidth, Float nheight, Float ntop, Float nleft, Float nz) {
+	public NoteDto(int opno, int nno, String ntitle, String nwriter, String ncontent) {
 		super();
 		this.opno = opno;
 		this.nno = nno;
+		this.ntitle = ntitle;
+		this.nwriter = nwriter;
 		this.ncontent = ncontent;
-		this.nwidth = nwidth;
-		this.nheight = nheight;
-		this.ntop = ntop;
-		this.nleft = nleft;
-		this.nz = nz;
 	}
 
 	public int getOpno() {
@@ -59,6 +46,22 @@ public class NoteDto {
 		this.nno = nno;
 	}
 
+	public String getNtitle() {
+		return ntitle;
+	}
+
+	public void setNtitle(String ntitle) {
+		this.ntitle = ntitle;
+	}
+
+	public String getNwriter() {
+		return nwriter;
+	}
+
+	public void setNwriter(String nwriter) {
+		this.nwriter = nwriter;
+	}
+
 	public String getNcontent() {
 		return ncontent;
 	}
@@ -67,62 +70,10 @@ public class NoteDto {
 		this.ncontent = ncontent;
 	}
 
-	public Float getNwidth() {
-		return nwidth;
-	}
-
-	public void setNwidth(Float nwidth) {
-		this.nwidth = nwidth;
-	}
-
-	public Float getNheight() {
-		return nheight;
-	}
-
-	public void setNheight(Float nheight) {
-		this.nheight = nheight;
-	}
-
-	public Float getNtop() {
-		return ntop;
-	}
-
-	public void setNtop(Float ntop) {
-		this.ntop = ntop;
-	}
-
-	public Float getNleft() {
-		return nleft;
-	}
-
-	public void setNleft(Float nleft) {
-		this.nleft = nleft;
-	}
-
-	public Float getNz() {
-		return nz;
-	}
-
-	public void setNz(Float nz) {
-		this.nz = nz;
-	}
-
-	// 서머노트 카피
-	public void CopyData(NoteDto param) {
-		this.opno = param.getOpno();
-		this.nno = param.getNno();
-		this.ncontent = param.getNcontent();
-		this.nwidth = param.getNwidth();
-		this.nheight = param.getNheight();
-		this.ntop = param.getNtop();
-		this.nleft = param.getNleft();
-		this.nz = param.getNz();
-	}
-
 	@Override
 	public String toString() {
-		return "NoteDto [opno=" + opno + ", nno=" + nno + ", ncontent=" + ncontent + ", nwidth=" + nwidth + ", nheight="
-				+ nheight + ", ntop=" + ntop + ", nleft=" + nleft + ", nz=" + nz + "]";
+		return "NoteDto [opno=" + opno + ", nno=" + nno + ", ntitle=" + ntitle + ", nwriter=" + nwriter + ", ncontent="
+				+ ncontent + "]";
 	}
 
 }

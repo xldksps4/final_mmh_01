@@ -19,20 +19,20 @@ public class HomeController {
 	
 	@ExceptionHandler(NullPointerException.class)
 	@RequestMapping(value = "/main.do")
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model) {		//메인페이지(준용형님것으로 대체필요)
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		return "main";
 	}
 	
 	@RequestMapping(value = "/logins.do", method=RequestMethod.POST)
-	public void login() {
+	public void login() {			//로그인(수왕씨것으로 대체필요)
 		logger.info("logins page");
 		
 	}
 	
 	@RequestMapping(value = "/signUp.do")
-	public void signUp() {
+	public void signUp() {		//회원가입(철규것으로대체필요)
 		logger.info("signUp page");
 		
 	}

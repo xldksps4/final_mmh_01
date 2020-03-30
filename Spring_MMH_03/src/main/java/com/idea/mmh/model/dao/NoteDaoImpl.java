@@ -37,7 +37,12 @@ public class NoteDaoImpl implements NoteDao {
 	public NoteDto selectOne(int opno) {
 		NoteDto rs = null;
 		
-		rs = sqlSession.selectOne(NAMESPACE+"selectOne",opno);
+		try {
+			rs = sqlSession.selectOne(NAMESPACE+"selectOne",opno);
+		} catch (Exception e) {
+			logger.info("에러 발생 : NoteDaoImpl.selectOne");
+			e.printStackTrace();
+		}
 		
 		return rs;
 	}
@@ -60,7 +65,12 @@ public class NoteDaoImpl implements NoteDao {
 	public int update(NoteDto dto) {
 		int res = 0;
 		
-		res = sqlSession.update(NAMESPACE+"update",dto);
+		try {
+			res = sqlSession.update(NAMESPACE+"update",dto);
+		} catch (Exception e) {
+			logger.info("에러 발생 : NoteDaoImpl.update");
+			e.printStackTrace();
+		}
 		
 		return res;
 	}
@@ -69,7 +79,12 @@ public class NoteDaoImpl implements NoteDao {
 	public int delete(int opno) {
 		int res = 0;
 		
-		res = sqlSession.delete(NAMESPACE+"delete",opno);
+		try {
+			res = sqlSession.delete(NAMESPACE+"delete",opno);
+		} catch (Exception e) {
+			logger.info("에러 발생 : NoteDaoImpl.delete");
+			e.printStackTrace();
+		}
 		
 		return res;
 	}
