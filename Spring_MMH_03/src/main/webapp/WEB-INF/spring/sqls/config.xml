@@ -7,11 +7,13 @@
 		<typeAlias type="com.idea.mmh.model.dto.MindDto" alias="mindDto"/>
 		<typeAlias type="com.idea.mmh.model.dto.NoteDto" alias="noteDto"/>
 		<typeAlias type="com.idea.mmh.model.dto.PoitDto" alias="poitDto"/>
+		<typeAlias type="com.idea.mmh.register.dto.MemberDto" alias="memberDto"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="/mybatis/mind-mapper.xml"/>
 		<mapper resource="/mybatis/note-mapper.xml"/>
 		<mapper resource="/mybatis/poit-mapper.xml"/>
+		<mapper resource="/mybatis/register-mapper.xml"/>
 	</mappers>
 </configuration>
