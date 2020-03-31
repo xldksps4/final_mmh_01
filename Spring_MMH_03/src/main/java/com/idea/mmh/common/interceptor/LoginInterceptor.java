@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.idea.mmh.model.dto.MemberDto;
+import com.idea.mmh.register.dto.MemberDto;
+
+
 
 public class LoginInterceptor implements HandlerInterceptor{
 

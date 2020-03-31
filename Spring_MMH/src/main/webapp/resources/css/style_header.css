@@ -1,0 +1,282 @@
+x9i9u    \\
+ @charset "utf-8";
+
+#wrap{position:relative;width:100%;height:auto;}
+
+#skip{z-index:4;position:relative;width:100%;height:auto;font-size:0;}
+#skip>li{width:100%;height:auto;font-size:0;}
+#skip>li>a{display:block;padding:0;font-size:0;text-align:center;color:#fff;background:#000;}
+#skip>li>a:focus{padding:20px;font-size:16px;}
+
+#header{z-index:3;position:relative;top:0;left:0;width:100%;height:auto; padding-bottom: 15px; background-color: skyblue}
+.header-wrap{width:100%;max-width:1090px;height:auto;margin:0 auto;overflow:hidden;}
+.pc{display:block;}
+#mobile-wrap{position:relative;left:-100%;display:none;width:200%;}
+#mobile-wrap>li{float:left;width:50%;}
+#mobile-wrap>li:first-child{height:auto;background:#333;}
+	.mobile-left{}
+	.mobile-left>li:first-child{position:relative;width:100%;height:70px;}
+		a.left-mLogoBtn{display:block;position:absolute;left:20px;top:23px;height:24px;width:24px;}
+		a.left-mLogoBtn>img{width:100%;}
+		
+		a.closeBtn{display:block;position:absolute;width:24px;right:20px;top:23px;height:24px;font-size:24px;color:#fff;}
+
+		.mobile-left-nav{padding:0 15px;}
+		.mobile-left-nav>li{padding:15px 0;border-top:1px solid #555;}
+		.mobile-left-nav>li>a{color:#cfcfcf;font-size:16px;text-transform:uppercase;font-weight:600;}
+		.mobile-left-nav>li:nth-child(3)>a{color:#a96c16;}
+		.mobile-left-nav>li>ul{}
+		.mobile-left-nav>li>ul>li{color:#cfcfcf;line-height:150%;padding:10px 0;}
+		.mobile-left-nav>li>ul>li>button{background:#222;height:40px;padding:0 30px;color:#cfcfcf;font-size:14px; font-weight:500;margin-right:5px;}
+		.mobile-left-nav>li>ul>li:last-child>p>span{display:inline-block;width:28px;height:28px; margin:0 5px; border-radius:50%; overflow:hidden;}
+		.mobile-left-nav>li>ul>li:last-child>p>span:last-child{margin-right:0;}
+		.mobile-left-nav>li>ul>li:last-child>p>span>a{display:block;width:100%;height:100%;background:#aaa;font-size:17px; color:#222; text-align:center;padding:5px 0;}
+		.mobile-left-nav>li>ul>li:last-child>p>span>a:hover{background:#fff;}
+
+
+#mobile-wrap>li:last-child{position:relative;height:auto;background:transparent;}
+	.mobile-bottom{z-index:5;position:fixed;bottom:0;left:0;width:100%;height:41px;background:#000;}
+	.mobile-bottom>ul{}
+	.mobile-bottom>ul>li{float:left;position:relative;}
+	.mobile-bottom>ul>li>a{display:block;padding:14px 15px;font-size:12px;text-align:center;color:#fff;font-weight:500;}
+	.mobile-bottom>ul>li>a>i{font-size:15px;color:#777;}
+	.mobile-bottom>ul>li>a>span{display:inline-block;padding-left:7px;}
+	.mobile-bottom>ul>li>select{display:inline-block;}
+		.mobile-only{position:absolute;top:-16px;left:0;background:transparent;padding-top:35px;padding-left:5px;}
+
+		.mobile-bottom>ul>li:last-child>a>i{display:inline-block;margin-top:-10px;padding-left:7px;font-size:30px;color:#777;}
+		
+.mobile{position:relative;background:#fff;width:100%;height:70px;}
+.mobile>li:first-child{position:absolute;width:152px;left:50%;margin-left:-76px;height:24px;top:23px;}
+.mobile>li:first-child>h1>a>img{height:24px;}
+.mobile>li:first-child>h1>a>span{display:inline-block;font-size:16px;color:#000;font-weight:600;padding:4px 0 4px 7px;}
+
+.mobile>li:nth-child(2){position:absolute;width:20px;left:20px;height:12px;top:29px;}
+	a.appBarBtn{position:relative;display:block;width:100%;height:100%;}
+		.bar {position:absolute;display:block;left:0;width:100%;height:2px;background:#000;}
+		.bar1{top:0;}
+		.bar2{top:50%;margin-top:-1px;}
+		.bar3{bottom:0;}
+		
+		
+.mobile>li:last-child{position:absolute;width:auto;right:20px;height:18px;top:26px;}
+	.searchBtn{display:block;height:18px;color:#000;}
+	.searchBtn>i{font-size:18px;}
+	
+
+
+
+
+/* 로고 */
+.header-wrap>ul>li:first-child{float:left;}
+.header-wrap>ul>li:first-child>p{padding-top:40px;}
+.header-wrap>ul>li:first-child>p>a{color:#fff;font-weight:700;}
+.header-wrap>ul>li:first-child>p>a>img{width:35px;}
+.header-wrap>ul>li:first-child>p>a>span{display:inline-block;font-size:27px;padding:4px 0 4px 8px;text-transform:uppercase;}
+
+
+.header-wrap>ul>li:last-child{float:right;}
+.header-wrap>ul>li>div{float:right;}
+/* 탑메뉴와 메인메뉴 박스 */
+.nav-wrap{width:auto;}
+.nav-wrap>li:first-child{padding-top:17px;} /*top(aside)메뉴*/
+.nav-wrap>li:last-child{padding-top:21px;}  /*main(nav)메뉴*/
+
+/* 탑메뉴 font-size:13px */
+.nav-wrap aside{width:auto;}
+.nav-wrap aside>ul{float:right;}
+.nav-wrap aside>ul>li{display:inline-block;}
+.nav-wrap aside>ul>li>span{color:rgba(255,255,255, 0.6);}
+.nav-wrap aside>ul>li:nth-child(2){margin:0 3px;}
+.nav-wrap aside>ul>li:nth-child(2)>span{color:rgba(255,255,255, 0.6);}
+.nav-wrap aside>ul>li:nth-child(5){margin:0 3px;}
+.nav-wrap aside>ul>li:nth-child(4)>span{color:rgba(255,255,255, 0.6);}
+.nav-wrap aside>ul>li:nth-child(4){margin-right:13px;}
+.nav-wrap aside>ul>li>a{font-size:13px;color:rgba(255,255,255, 0.6);}
+
+/* 메인메뉴 font-size:18px */
+.nav-wrap nav{width:auto;}
+.nav-wrap nav>ul{width:auto;}
+.nav-wrap nav>ul>li{display:inline-block;margin:0 10px;}
+.nav-wrap nav>ul>li:last-child{margin-right:0;}
+.nav-wrap nav>ul>li>a>i{font-size:30px;margin-top:-12px;}
+.nav-wrap nav>ul>li>a{position:relative;display:block;font-size:18px;letter-spacing:-1.5px;text-transform:uppercase;color:#fff;font-weight:500;padding-bottom:7px;}
+.nav-wrap nav>ul>li>a.navDeco>span{position:absolute;bottom:0;left:0;display:block;width:100%;height:2px;background:#fff;opacity:0.6;}
+
+
+
+
+
+
+#main{z-index:2;position:relative;width:100%;height:auto;}
+
+#section1{width:100%;height:auto; overflow:hidden;}
+.section1-wrap{position:relative;width:100%;height:auto;}
+	/* MAIN VIDEO 배경 */
+	.main-video{z-index:1;position:relative;width:100%;height:100%;}     /*jQuery로 너비*/
+	/* SHARE VIDEO & WATCH AGAIN */
+	.section1-video-control-wrap{z-index:2;position:absolute;top:50%;left:50%;margin-top:-80px;margin-left:-80px;width:160px;height:160px;background:transparent;border-radius:50%;border:1px solid rgba(255,255,255, 0.6);overflow:hidden;transition:all 0.3s;}
+	.section1-video-control-wrap:hover{margin-top:-82px;margin-left:-82px;width:164px;height:164px;transition:all 0.3s;}
+	.section1-video-control-wrap>ul{position:absolute;top:50%;margin-top:-31.5px;left:0;width:100%;}
+	.section1-video-control-wrap>ul>li{text-align:center;}
+	.section1-video-control-wrap>ul>li>a{font-size:16px;font-weight:500;color:#fff;letter-spacing:-1px;}
+	.section1-video-control-wrap>ul>li>i{display:block;width:70px;height:1px;background:rgba(255,255,255, 0.6);margin:15px auto;}
+	/* stories */
+	.btn-stories-wrap{z-index:2;position:absolute;bottom:90px;left:0;width:100%;text-align:center;}
+	.btn-stories-wrap>a{text-transform:uppercase;font-size:16px;color:#fff;font-weight:500;letter-spacing:-1px;word-spacing:7px;}
+	/* SECTION1 BOTTOM BOX */
+	.section1-bottom-icon-btn-wrap{z-index:2;position:absolute;bottom:-20px;left:0;width:100%;height:80px;background:rgba(56,65,68, 0.2);}
+	.section1-bottom-icon-btn-wrap>div{padding:0 80px;}
+	.section1-bottom-icon-btn-wrap>div>ul{position:relative;}
+	.section1-bottom-icon-btn-wrap>div>ul>li{position:absolute;top:0;}
+	.section1-bottom-icon-btn-wrap>div>ul>li:nth-child(1){left:0;width:120px;height:60px;}
+	.section1-bottom-icon-btn-wrap>div>ul>li:nth-child(2){left:50%;margin-left:-30px;width:60px;height:60px;}
+	.section1-bottom-icon-btn-wrap>div>ul>li:nth-child(3){right:0;width:120px;height:60px;}
+	
+	/* ICON BUTTON 5개 */
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul{}
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul>li{float:left;width:60px;height:60px;}
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul>li>a{display:block;width:100%;height:100%;text-align:center;color:#ccc;transition:all 0.3s;}
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul>li>a:hover{color:#fff;transition:all 0.3s;}
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul>li>a.addIconBt{background:rgba(110,116,117,0.7);transition:all 0.3s;}
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul>li>a>i{padding:20px 0;font-size:20px;}
+
+		a.btn-icon-video,
+		a.btn-icon-map,
+		a.btn-icon-play,
+		a.btn-icon-mute{border-right:1px solid rgba(255,255,255, .2);}
+		
+		
+		a.btn-icon-play,
+		a.btn-icon-video{border-left:1px solid rgba(255,255,255, .2);}
+	
+	.section1-bottom-icon-btn-wrap>div>ul>li>ul>li>a.btn-icon-down>i{font-size:30px;margin-top:-8px;}
+	
+	
+	/* SECTION1 MODAL BOX */
+	.section1-modal{z-index:5;position:absolute;top:50%;left:50%;margin-left:-200px;margin-top:-117.5px;width:360px;height:195px;padding:20px;background:#fff;box-shadow:5px 5px 10px rgba(0,0,0, 0.3);} 
+	.section1-modal>ul{padding-top:60px;position:relative;}
+	#rands{border:1px; width:auto; text-align: center;position:relative}
+	.section1-modal>ul>li{font-size:13px;color:#555858;text-align:center;}
+	.section1-modal>ul>li:first-child{font-size:20px;text-align:center; margin-bottom: 20px}
+	.section1-modal>ul>li>i{display:block;width:70px;background:#bbbcbc;height:1px;margin:20px auto 5px auto;}
+	.section1-modal>ul>li>a{color:#555858;margin:0 9px;}
+	.section1-modal>ul>li>a>i{font-size:17px;}
+	.section1-modal>ul>li:last-child{position:absolute;right:0;top:0;}
+	.section1-modal>ul>li:last-child>a>i{font-size:30px;}
+	
+	/* SECTION1 MODAL2 BOX */
+	.section1-modal2{z-index:6;position:absolute;top:50%;left:50%;margin-left:-200px;margin-top:-117.5px;width:360px;height:195px;padding:20px;background:#fff;box-shadow:5px 5px 10px rgba(0,0,0, 0.3);} 
+	.section1-modal2>ul{padding-top:60px;position:relative;}
+	.section1-modal2>ul>li{font-size:13px;color:#555858;text-align:center;}
+	.section1-modal2>ul>li:first-child{font-size:20px;text-align:center; margin-bottom: 20px}
+	.section1-modal2>ul>li>i{display:block;width:70px;background:#bbbcbc;height:1px;margin:20px auto 5px auto;}
+	.section1-modal2>ul>li>a{color:#555858;margin:0 9px;}
+	.section1-modal2>ul>li>a>i{font-size:17px;}
+	.section1-modal2>ul>li:last-child{position:absolute;right:0;top:0;}
+	.section1-modal2>ul>li:last-child>a>i{font-size:30px;}
+
+
+
+	
+#section2{width:100%;height:auto;}
+.section2-wrap{width:100%;height:auto;}
+.section2-box-wrap{width:100%;height:auto;}
+.section2-box-wrap>li{float:left;width:50%;height:450px;}
+.section2-box-wrap>li:first-child{background:#384144;height:450px;}
+.section2-box-wrap>li:last-child{background:#727b77;height:450px;}
+
+/* 텍스트 박스의 안여백 */
+.section2-box-wrap>li>ul{padding:70px 80px;}
+.section2-box-wrap>li>ul>li{width:100%;}
+.section2-box-wrap>li>ul>li>h2{display:inline-block;font-size:20px; font-weight:600; color:#fff; padding-bottom:25px;}
+.section2-box-wrap>li>ul>li>h2>i{display:block;width:100%; height:20px; border-bottom:1px solid rgba(255,255,255, 0.6);}
+.section2-box-wrap>li>ul>li>p{font-size:14px;color:rgba(255,255,255, 0.6); line-height:200%; font-family:'Nanum Myeongjo'; font-weight:300; word-break:keep-all;}
+
+
+
+
+
+#section3{width:100%;height:auto;}
+.section3-nav-wrap{width:100%;height:52px;background:#2c3437;overflow:hidden;}
+.section3-nav-wrap>ul{width:100%; text-align:center;}
+.section3-nav-wrap>ul>li{display:inline-block;}
+.section3-nav-wrap>ul>li>a{display:block;text-transform:uppercase;padding:20px 20px 19px 20px;font-size:13px;font-weight:600; color:rgba(255,255,255, 0.8);}
+.section3-nav-wrap>ul>li>a:hover{background:#2a2f32;}
+.section3-nav-wrap>ul>li:first-child>a{background:#2a2f32;color:rgba(255,255,255, 1);}
+
+.video-gallery{width:100%;}
+.video-gallery>li{float:left;width:33.33333%;overflow:hidden;}
+
+.video-gallery>li>div{position:relative;width:100%;}
+
+/*비디오*/
+.video-gallery>li>div>video{z-index:1;display:block;position:relative;width:100%;height:auto;transform:scale(1,1);transition:all 0.6s;}
+.video-gallery>li>div>video.addZoom{transform:scale(1.3,1.3);transition:all 0.6s;}
+.video-gallery>li>div>img{z-index:1;display:block;position:relative;width:100%;height:auto;transform:scale(1,1);transition:all 0.6s;}
+.video-gallery>li>div>img.addZoom{transform:scale(1.3,1.3);transition:all 0.6s;}
+
+/*비디오 cap*/
+.video-gallery>li>div>p{z-index:2;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0, 0);transition:all 0.6s;}
+.video-gallery>li>div>p.addBg{background:rgba(0,0,0, 0.7); transition:all 0.6s;}
+
+/*텍스트*/
+.video-gallery>li>div>ul{z-index:3;position:absolute;top:140px;left:100px;}
+.video-gallery>li>div>ul>li{padding-bottom:40px;}
+.video-gallery>li>div>ul>li>h3{font-size:23px; font-family:'Nanum Myeongjo'; font-weight:600; color:#fff;margin-top:20px; opacity:0; transition:all .6s;}
+.video-gallery>li>div>ul>li>h3.addAni1{margin-top:0;  opacity:1; transition:all .6s;}
+.video-gallery>li>div>ul>li>p{display:inline-block;font-size:20px; font-weight:500;color:#fff;margin-top:20px; opacity:0; transition:all .6s;}
+.video-gallery>li>div>ul>li>p.addAni1{margin-top:0;  opacity:1; transition:all .6s;}
+.video-gallery>li>div>ul>li>p>i{display:block;width:100%;height:10px;border-bottom:1px solid rgba(255,255,255, 0.5);}
+
+/*투명버튼*/
+.video-gallery>li>div>a{z-index:4;position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:transparent;}
+
+/*둥근버튼*/
+.video-gallery>li>div>span{z-index:5;display:block;position:absolute;bottom:50px;left:100px;width:102px;height:102px;border-radius:50%;border:1px solid #fff;overflow:hidden; opacity:0; transition:all .6s ease-in;}
+.video-gallery>li>div>span.addAni1{bottom:100px; opacity:1; transition:all .6s ease-out;}
+.video-gallery>li>div>span>a{display:block;width:100%;height:100%;font-size:13px;font-weight:600;text-align:center;color:#fff;transition:all 1s;}
+.video-gallery>li>div>span>a:hover{color:#444;background:#fff;transition:all 0.3s;}
+.video-gallery>li>div>span>a>i{display:block;padding-top:45px;}
+
+
+/*갤러리2*/
+.gallery2{display:none;}
+
+#section4{width:100%;height:auto; background:#384244;}
+.section4-wrap{position:relative;width:100%;height:auto;padding:50px 0;text-align:center;}
+.loadMoreBtn{cursor:pointer;width:200px;height:50px; color:#fff; font-size:16px; font-weight:600; background:#384244; border:1px solid rgba(255,255,255, 0.3);}
+
+
+#footer{z-index:1; position:relative; width:100%; height:auto; background:#222;}
+.footer-wrap{width:100%;max-width:1090px;height:auto;margin:0 auto;}
+.footer-wrap>div{width:100%;}
+
+.footer-sitemap{width:100%;text-align:center;padding-top:50px;}
+.footer-sitemap>li{float:left;}
+.footer-sitemap>li>i{display:block;width:20px;height:1px;background:#666;}
+.footer-sitemap>li>span{display:block;text-align:left;font-size:14px;font-weight:600;color:#fff;padding:20px 0 15px 0;}
+.footer-sitemap>li>ul{text-align:left;}
+.footer-sitemap>li>ul>li{line-height:180%;}
+.footer-sitemap>li>ul>li>a{color:#888;font-size:12px;}
+
+.footer-copyright{width:100%;padding:80px 0 40px 0;}
+.footer-copyright>li:first-child{float:left;width:auto;}
+.footer-copyright>li:last-child{float:right;width:auto;}
+.footer-copyright>li>p{color:#888; font-size:12px;font-family:'Nanum Myeongjo';}
+.footer-copyright>li>p a{color:#888; font-size:12px; font-family:'Nanum Myeongjo';}
+.footer-copyright>li>p a:hover{color:#fff; text-decoration:underline;}
+
+.footer-copyright>li:first-child>p{padding-top:12px; padding-bottom:11px;}
+.footer-copyright>li:last-child>p>span{display:inline-block;width:35px;height:35px; margin:0 5px; border-radius:50%; overflow:hidden;}
+.footer-copyright>li:last-child>p>span:last-child{margin-right:0;}
+.footer-copyright>li:last-child>p>span>a{display:block;width:100%;height:100%;background:#aaa;font-size:18px; color:#222; text-align:center;padding:8.5px 0;}
+.footer-copyright>li:last-child>p>span>a:hover{background:#fff;}
+
+
+
+
+
+
+
+

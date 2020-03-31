@@ -12,7 +12,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.project.shuttle">
+	<logger name="com.idea.mmh">
 		<level value="info" />
 	</logger>
 	
