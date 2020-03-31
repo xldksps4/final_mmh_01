@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.idea.mmh.model.dao.NoteDao;
 import com.idea.mmh.model.dto.NoteDto;
 
+
 @Service
 public class NoteBizImpl implements NoteBiz{
 
@@ -26,9 +27,9 @@ public class NoteBizImpl implements NoteBiz{
 	}
 
 	@Override
-	public NoteDto selectOne(int opno) {
+	public NoteDto selectOne(int nno) {
 		// TODO Auto-generated method stub
-		return dao.selectOne(opno);
+		return dao.selectOne(nno);
 	}
 //서머노트 인서트
 	@Override
@@ -46,13 +47,12 @@ public class NoteBizImpl implements NoteBiz{
 	}
 
 	@Override
-	public int delete(int opno) {
+	public int delete(int nno) {
 		// TODO Auto-generated method stub
-		return dao.delete(opno);
+		return dao.delete(nno);
 	}
 
 	@Override
-	@Transactional
 	public String test() {
 		// TODO Auto-generated method stub
 		dao.insert(new NoteDto(450, 0,"transaction","developer","test_test")); //정상적인 코드

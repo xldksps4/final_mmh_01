@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.idea.mmh.model.biz.MindBiz;
 import com.idea.mmh.model.biz.NoteBiz;
 import com.idea.mmh.model.biz.PoitBiz;
 import com.idea.mmh.model.dto.NoteDto;
@@ -71,22 +71,31 @@ public class PageController {
 	
 //서머노트 insertres(save)	
 	@RequestMapping(value ="/save.do", method = {RequestMethod.POST, RequestMethod.GET})	// button태그에서 보낸 onclick함수 경로
-	public String save(Model model,NoteDto dto) {
-	//나중에 서머노트에 들어가는 list를 뽑아내야하나?
-		//select로 가져온 값을 insert로 전달.
-		
-		
-// 써머노트 insert
+	public String save(RedirectAttributes redirect, NoteDto dto) {
+//		RedirectAttributes redirect
 		logger.info("서머노트 insert는 잘 되었나요? dto : "+dto);
-		int res = notebiz.insert(dto);
+		
+		if(dto.getNtitle() instanceof String) {
+			logger.info("ntitle은 String입니다.");				//당첨
+		} else if (dto.getNtitle() instanceof Object) {
+			logger.info("ntitle은 object입니다.");
+		} else if (dto.getNtitle() == null) { 
+			logger.info("ntitle은 null값입니다.");
+		} else {
+			logger.info("ntitle은 String도 object도 null도 아닙니다.");
+		}
+
+		int resNno = notebiz.insert(dto);	// 0or1이 아니라 nno번호로 나올거에요
+
+//시퀀스 번호를 seq.nextval, 이런걸로 해당 저장된 값 확인, 그걸 토대로 nno.
+//		notebiz.selectOne(nno);
 		
 		//Stringify사용해서 object -> 문자열로.
 		
 		//처리해주고 화면전환
-		if(res > 0) {
-//			model.addAttribute("dto", notebiz.insert(dto)); //addattribute ?? ${변수명}
-//			return "redirect:user_meetinglogdetail.do";	//viewResolver가 알아서 보내줄거에요
-			return "redirect: /user_meetinglogdetail?nno="+ dto.getNno();
+		if(resNno > 0) {
+			return "redirect: user_meetinglogdetail.do?nno="+resNno;	//controller로 다시 ...
+//			return "redirect: /user_meetinglogdetail?nno="+ 변수명;
 		}else {
 	    	   logger.info("ㅠ ㅠ 서머노트 insert Controller에서 안넘어감");
 			return "redirect:user_list.do";

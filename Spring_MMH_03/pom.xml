@@ -63,10 +63,10 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.15</version>
 			<exclusions>
-				<exclusion>
-					<groupId>javax.mail</groupId>
-					<artifactId>mail</artifactId>
-				</exclusion>
+<!-- 				<exclusion> -->
+<!-- 					<groupId>javax.mail</groupId> -->
+<!-- 					<artifactId>mail</artifactId> -->
+<!-- 				</exclusion> -->
 				<exclusion>
 					<groupId>javax.jms</groupId>
 					<artifactId>jms</artifactId>
@@ -202,7 +202,18 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
-		     
+<!-- mail 관련 exclusion태그 주석처리하고 mail관련 라이브러리 의존성주입 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+<!-- java 1.8버전은 아래와 같은 보조 라이브러리를 추가 주입해줘야한다. -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
 	</dependencies>
 	
 	<!-- ojdbc6 : repositories 추가 -->

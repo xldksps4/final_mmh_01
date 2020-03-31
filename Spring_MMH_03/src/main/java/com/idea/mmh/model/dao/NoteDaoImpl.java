@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import com.idea.mmh.model.dto.NoteDto;
 
+
+
 @Repository
 public class NoteDaoImpl implements NoteDao {
 
@@ -34,11 +36,11 @@ public class NoteDaoImpl implements NoteDao {
 	}
 
 	@Override
-	public NoteDto selectOne(int opno) {
+	public NoteDto selectOne(int nno) {
 		NoteDto rs = null;
 		
 		try {
-			rs = sqlSession.selectOne(NAMESPACE+"selectOne",opno);
+			rs = sqlSession.selectOne(NAMESPACE+"selectOne",nno);
 		} catch (Exception e) {
 			logger.info("에러 발생 : NoteDaoImpl.selectOne");
 			e.printStackTrace();
@@ -50,15 +52,16 @@ public class NoteDaoImpl implements NoteDao {
 	@Override
 	public int insert(NoteDto dto) {
 		int res = 0;
-		
+		int nno = 0;
 		try {
-			res = sqlSession.insert(NAMESPACE+"insert",dto);
+			res = sqlSession.insert(NAMESPACE+"insert",dto); 	//0or1
+			nno = dto.getNno();		//nno번호
 		} catch (Exception e) {
 			logger.info("서머노드 저장중 에러 발생");
 			e.printStackTrace();
 		}
 		
-		return res;
+		return nno;
 	}
 
 	@Override
@@ -76,11 +79,11 @@ public class NoteDaoImpl implements NoteDao {
 	}
 
 	@Override
-	public int delete(int opno) {
+	public int delete(int nno) {
 		int res = 0;
 		
 		try {
-			res = sqlSession.delete(NAMESPACE+"delete",opno);
+			res = sqlSession.delete(NAMESPACE+"delete",nno);
 		} catch (Exception e) {
 			logger.info("에러 발생 : NoteDaoImpl.delete");
 			e.printStackTrace();

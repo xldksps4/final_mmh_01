@@ -74,7 +74,7 @@ function goWrite(frm) {
 	console.log('서머노트 유효성검사, ntitle(log 4中2) : '+ ntitle);
 	console.log('서머노트 유효성검사, nwriter(log 4 中 3) : '+ nwriter);
 	console.log('서머노트 유효성검사, ncontent(log 4中 4) : '+ ncontent);
-	
+	alert('sdsd');
 //	frm.submit();
 	document.getElementById('subMitBtn').submit();
 

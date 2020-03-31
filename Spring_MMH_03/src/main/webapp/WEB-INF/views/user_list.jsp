@@ -23,16 +23,15 @@
 			<th>작성일</th>
 		</tr>
 		<c:choose>
-			<c:when test="${empty list }">
+			<c:when test="${empty selectlist }">
 				<tr><td colspan="4">---------작성된 글이 존재하지 않습니다-----------</td></tr>
 			</c:when>
 			<c:otherwise>
-				<c:forEach items="${list }" var="dto">
+				<c:forEach items="${selectlist }" var="dto">
 					<tr>
-						<td>${selectlist.opno }</td>
-						<td>${selectlist.myname }</td>
-						<td><a href="user_meetinglogdetail.do?n_no=20">${selectlist.mytitle }</a></td>
-						<td>${selectlist.mydate }</td>
+						<td>${dto.opno }</td>
+						<td>${dto.nwriter }</td>
+						<td><a href="user_meetinglogdetail.do?opno=450&nno=${dto.nno}">${dto.ntitle }</a></td>
 					</tr>
 				</c:forEach>
 			</c:otherwise>

@@ -5,12 +5,9 @@
   <resultMap type="noteDto" id="noteMap">
   	<result property="opno" column="O_P_NO"/>
   	<result property="nno" column="N_NO"/>
+  	<result property="ntitle" column="N_TITLE"/>
+  	<result property="nwriter" column="N_WRITER"/>
   	<result property="ncontent" column="N_CONTENT"/>
-  	<result property="nwidth" column="N_WIDTH"/>
-  	<result property="nheight" column="N_HEIGHT"/>
-  	<result property="ntop" column="N_TOP"/>
-  	<result property="nleft" column="N_LEFT"/>
-  	<result property="nz" column="N_Z"/>
   </resultMap>
   
   
@@ -26,8 +23,11 @@
   
   <!-- 게시판 insert -->
   <insert id="insert" parameterType="noteDto">
-  	INSERT INTO MMH_NOTE  (opno, nno, ntitle, nwriter, ncontent) 
-  	VALUES(450, MMH_NOTE_SEQ.NEXTVAL, #{ntitle}, "#{nwriter}", #{ncontent})
+    <selectKey keyProperty="nno" order="BEFORE" resultType="int">
+		SELECT MMH_NOTE_SEQ.NEXTVAL FROM DUAL
+	</selectKey>
+  	INSERT INTO MMH_NOTE  (O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT) 
+  	VALUES(450, #{nno}, #{ntitle}, #{nwriter}, #{ncontent})
   </insert>
   
   <update id="update" parameterType="noteDto">

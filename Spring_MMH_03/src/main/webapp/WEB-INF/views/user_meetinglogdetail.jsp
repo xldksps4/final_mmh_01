@@ -4,16 +4,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회의록 글 보기 페이지</title>
+<!-- include libraries(jQuery, bootstrap) -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+<!-- include summernote css/js-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+<!-- include summernote-ko-KR -->
+<script src="/resources/js/summernote-ko-KR.js"></script>
 <link href="./resources/js/user_meetinglogwrite.js" rel="javascript"/>
+<title>회의록 글 보기 페이지</title>
 </head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 <script type="text/javascript">
-
+//글 작성
+$(document).ready(function() {
+	  $('#summernote').summernote({
+ 	    	placeholder: '회의 내용을 기록하세요',
+ 	    	height: 300, 						//에디터 높이
+	        minHeight: 370,						//최소 높이
+	        maxHeight: null,					//최대 높이
+	        focus: true, 						// 에디터 로딩 후 포커스 맞출지 여부
+	        lang : 'ko-KR'						// 언어(한글)
+	  });
+	  $('#summernote').summernote('disable');
+	}); 
 </script>
 <body>
 
-	<h2>서머노트 내용(dto.ncontent): ${dto.ncontent}</h2>
 	<h2>서머노트 내용(select.ncontent): ${select.ncontent}</h2>
 	<h3>서머노트 내용(select): ${select} }</h3>
 	
