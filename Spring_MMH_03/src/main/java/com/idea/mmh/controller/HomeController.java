@@ -31,9 +31,10 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping(value = "/signUp.do")
+
+	@RequestMapping(value = "/sign.do")
 	public void signUp() {		//회원가입(철규것으로대체필요)
-		logger.info("signUp page");
+		logger.info("sign page");
 		
 	}
 //	@RequestMapping(value="/user_meetinglogwrite.do", method = RequestMethod.POST)	//<<-- 405에러 , 여기는 받는 방식입니다.
@@ -55,4 +56,9 @@ public class HomeController {
 		return "boardwritejh";
 	}
 	
+	@RequestMapping(value = "/voice_speech.do")
+	public String voice() {
+
+		return "voice_speech";
+	}
 }
