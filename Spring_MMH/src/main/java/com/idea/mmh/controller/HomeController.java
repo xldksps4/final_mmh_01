@@ -32,10 +32,10 @@ public class HomeController {
 	private MemberBiz mbiz;
 
 	// 얘가 뭔지 불확실하지만 아마,
-	// 등급에 따른 메인페이지로
+	// 로그인 세션 유지중에 등급에 따른 메인페이지로...?
 	@RequestMapping("/grade_main.do") // admin.do -> grade_main.do
 	public String list(Model model, HttpSession session) {
-		logger.info("admin_main페이지로 갑니다.");
+		logger.info("얘가 뭘까요");
 
 		model.addAttribute("list", biz.selectList());
 		MemberDto res = (MemberDto) session.getAttribute("login");
@@ -45,7 +45,7 @@ public class HomeController {
 		} else if (res.getM_grade().equals("U")) {
 			return "user_info"; // viewuser -> user_info
 		} else {
-			return "redirect: /"; // 시작페이지로 이동하네요
+			return "redirect: /"; // 시작페이지로 이동하나요
 		}
 	}
 
