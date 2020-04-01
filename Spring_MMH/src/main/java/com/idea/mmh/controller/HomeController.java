@@ -175,4 +175,10 @@ public class HomeController {
 
 		return "redirect:list.do";
 	}
+	
+	@RequestMapping(value = "/voice_speech.do")
+	public String voice() {
+
+		return "voice_speech";
+	}
 }
