@@ -71,10 +71,13 @@ public class MemberDaoImpl implements MemberDao {
 		return result;
 	}
 
+	
+	
+	
 	@Override
 	public MemberDto login(MemberDto dto) {
 		MemberDto res = null;
-		
+		System.out.println("dao"+dto);
 		try {
 			res = sqlSession.selectOne(NAMESPACE + "login", dto);
 		} catch (Exception e) {

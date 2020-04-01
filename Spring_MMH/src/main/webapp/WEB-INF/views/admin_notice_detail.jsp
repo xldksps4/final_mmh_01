@@ -8,7 +8,7 @@
 </head>
 <body>
  	<jsp:include page="header.jsp"></jsp:include>
-	<h1>상세 글 보기</h1>
+	<h1>공지 글 보기(없앨예정)</h1>
 
 	<table border="1">
 		<tr>

@@ -32,7 +32,7 @@ h1{text-align: center; padding-top:5%; }
 </style>
 
 
-<html>
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -41,7 +41,7 @@ h1{text-align: center; padding-top:5%; }
  	<jsp:include page="header.jsp"></jsp:include>
 
 	<h1 id="b">상세 USER 보기</h1>
-	<form action="updatemember.do" method="post" id="noticeform">
+	<form action="update_member.do" method="post" id="noticeform">
 	<table border="1" class="tabl">
 		<input type="hidden" name="m_id" value="${login.m_id }"/>
 		<tr>
@@ -58,8 +58,8 @@ h1{text-align: center; padding-top:5%; }
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="수정" />
-				<input type="button" value="목록" onclick="location.href='admin.do'"/>
+				<input type="submit" value="수정완료" />
+				<input type="button" value="뒤로가기" onclick="location.href='user_info.do'"/>
 			</td>
 		</tr>
 	</table>

@@ -176,5 +176,13 @@ public class PageController {
     
     }
 
-	
+//	@RequestMapping(value="/user_meetinglogwrite.do", method = RequestMethod.POST)	//<<-- 405에러 , 여기는 받는 방식입니다.
+	@RequestMapping(value="/user_meetinglogwrite.do", method = {RequestMethod.POST, RequestMethod.GET })
+	public String MeetingWrite(Model model) {
+		
+		logger.info("여기는 meeting페이지로 넘어가는 컨트롤러입니다.");
+		
+		return "user_meetinglogwrite";
+	}
+    
 }
