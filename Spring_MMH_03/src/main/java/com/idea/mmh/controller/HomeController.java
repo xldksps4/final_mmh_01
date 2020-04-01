@@ -31,15 +31,12 @@ public class HomeController {
 		
 	}
 	
-<<<<<<< HEAD
 
-=======
-	@RequestMapping(value = "/signUp.do")
+	@RequestMapping(value = "/sign.do")
 	public void signUp() {		//회원가입(철규것으로대체필요)
-		logger.info("signUp page");
+		logger.info("sign page");
 		
 	}
->>>>>>> d70db4995c9d857bbf04d7197145ec741af90420
 //	@RequestMapping(value="/user_meetinglogwrite.do", method = RequestMethod.POST)	//<<-- 405에러 , 여기는 받는 방식입니다.
 	@RequestMapping(value="/user_meetinglogwrite.do", method = {RequestMethod.POST, RequestMethod.GET })
 	public String MeetingWrite(Model model) {
