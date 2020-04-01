@@ -19,19 +19,27 @@ public class HomeController {
 	
 	@ExceptionHandler(NullPointerException.class)
 	@RequestMapping(value = "/main.do")
-	public String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model) {		//메인페이지(준용형님것으로 대체필요)
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		return "main";
 	}
 	
 	@RequestMapping(value = "/logins.do", method=RequestMethod.POST)
-	public void login() {
+	public void login() {			//로그인(수왕씨것으로 대체필요)
 		logger.info("logins page");
 		
 	}
 	
+<<<<<<< HEAD
 
+=======
+	@RequestMapping(value = "/signUp.do")
+	public void signUp() {		//회원가입(철규것으로대체필요)
+		logger.info("signUp page");
+		
+	}
+>>>>>>> d70db4995c9d857bbf04d7197145ec741af90420
 //	@RequestMapping(value="/user_meetinglogwrite.do", method = RequestMethod.POST)	//<<-- 405에러 , 여기는 받는 방식입니다.
 	@RequestMapping(value="/user_meetinglogwrite.do", method = {RequestMethod.POST, RequestMethod.GET })
 	public String MeetingWrite(Model model) {

@@ -40,7 +40,11 @@
 	<!-- E-mail 인증에 필요한 주소 -->
 		<beans:bean id="mailSender"	class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<beans:property name="host" value="smtp.gmail.com" />
+<<<<<<< HEAD
 		<beans:property name="port" value="587" /><!-- 465 or 25 -->
+=======
+		<beans:property name="port" value="587" /><!-- 메일에 사용되는 포트번호는 25 / 465 / 587 중 하나를 선택해야한다. -->
+>>>>>>> d70db4995c9d857bbf04d7197145ec741af90420
 		<beans:property name="username" value="chergue93@gmail.com" />
 		<beans:property name="password" value="park091012" />
 		<beans:property name="defaultEncoding" value="utf-8" />
@@ -51,7 +55,12 @@
 				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
 				<beans:prop key="mail.debug">true</beans:prop>
 			</beans:props>
+<<<<<<< HEAD
 		</beans:property>
 	</beans:bean>
 	
+=======
+		</beans:property>	
+		</beans:bean>
+>>>>>>> d70db4995c9d857bbf04d7197145ec741af90420
 </beans:beans>
