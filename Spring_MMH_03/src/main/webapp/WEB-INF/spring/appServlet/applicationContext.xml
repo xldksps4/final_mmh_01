@@ -12,6 +12,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:mybatis/db.properties</value>
+				
 			</list>
 		</property>
 	</bean>
