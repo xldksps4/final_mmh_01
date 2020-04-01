@@ -146,6 +146,7 @@ public class MemberController {
 		boolean admin = true;
 		if(res != null) {
 			session.setAttribute("login", res);
+			user.setAttribute("dto", res);
 //			user.setAttribute("dto", res);			//왜 HttpSession이 두개지?
 			check = true;
 			if(res.getM_grade().equals("A")) {
