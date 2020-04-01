@@ -51,4 +51,9 @@ public class HomeController {
 		return "boardwritejh";
 	}
 	
+	@RequestMapping(value = "/voice_speech.do")
+	public String voice() {
+
+		return "voice_speech";
+	}
 }
