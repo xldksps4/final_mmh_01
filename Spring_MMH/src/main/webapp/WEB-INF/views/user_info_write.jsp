@@ -10,13 +10,13 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-      $(document).ready(function(){
-         $("#header1").load("header.html");
-       	$("#footer1").load("footer.html");
-        /* id 지정을 통해서도 가능합니다. 
-         $("#header").load("header.html #navbar")
-         */       
-      });
+//       $(document).ready(function(){
+//          $("#header1").load("header.html");
+//        	$("#footer1").load("footer.html");
+//         /* id 지정을 통해서도 가능합니다. 
+//          $("#header").load("header.html #navbar")
+//          */       
+//       });
 </script>
 <style>
 h1{text-align: center; padding-top:5%; }
