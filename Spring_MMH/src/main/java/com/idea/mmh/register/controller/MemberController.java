@@ -47,7 +47,7 @@ public class MemberController {
 	// insert가 안되면, 회원가입form화면으로 전환
 	@RequestMapping(value = "/sign.do", method = RequestMethod.POST)
 	public String insert(MemberDto dto) {
-		logger.info("select list");
+		logger.info("insert ");
 
 		int res = biz.insert(dto);
 
@@ -125,14 +125,14 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		
 		session.invalidate();
-		return "redirect:index.do";
+		return "redirect:admin_main.do";
 	}
 	
 	
 	
 	@RequestMapping(value = "/loginajax.do", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Boolean> loginAjax(HttpSession session,@RequestBody MemberDto dto, HttpSession user){
+	public Map<String, Boolean> loginAjax(HttpSession session,@RequestBody MemberDto dto){
 		logger.info("login ajax");
 		
 		/*
@@ -140,14 +140,14 @@ public class MemberController {
 		 * @ResponseBody : java 객체를 response 객체에 binding
 		 */
 		
+		System.out.println("\nLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLogin\n");
+		
 		MemberDto res = biz.login(dto);
 		System.out.println(res.getM_id()+"컨트롤러다");
 		boolean check = false;
 		boolean admin = true;
 		if(res != null) {
 			session.setAttribute("login", res);
-			user.setAttribute("dto", res);
-//			user.setAttribute("dto", res);			//왜 HttpSession이 두개지?
 			check = true;
 			if(res.getM_grade().equals("A")) {
 				admin=true;

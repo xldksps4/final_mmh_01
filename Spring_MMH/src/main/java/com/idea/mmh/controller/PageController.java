@@ -21,9 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.idea.mmh.model.biz.NoteBiz;
-import com.idea.mmh.model.biz.PoitBiz;
 import com.idea.mmh.model.dto.NoteDto;
-//유재욱 기능 용도(서머노트, 포스트잇)
+/*서머노트 등 글작성 관련 기능 및 페이지 컨트롤러*/
 @Controller
 public class PageController {
 
@@ -31,30 +30,19 @@ public class PageController {
 
 	@Autowired
 	private NoteBiz notebiz;
-	@Autowired
-	private PoitBiz poitbiz;
 	
 //서머노트list
 	@RequestMapping(value = "/user_list.do")
 	public String userList(Model model) {
-		logger.info("user list 페이지로 갈겁니다.");
+		logger.info("user_list.jsp로");
 		
 		model.addAttribute("selectlist", notebiz.selectList());
 		return "user_list";
 	}
 	
-////서머노트One(detail)
-//	@RequestMapping(value = "/user_meetinglogdetail.do")
-//	public String userMeetinglogdetail(Model model, int nno) {
-//		logger.info("user_meetinglogdetail 페이지로 갈겁니다.");
-//		
-//		model.addAttribute("select",notebiz.selectOne(nno));
-//		return "user_meetinglogdetail";
-//	}
-	
 	@RequestMapping(value="/user_meetinglogdetail.do")
 	public ModelAndView userMeetinglogdetail(HttpServletRequest request, ModelAndView mv, int nno) {
-		logger.info("mv를 사용해서 user_meetinglogdetail 페이지로 갈겁니다.");
+		logger.info("mv를 사용해서 user_meetinglogdetail.jsp로");
 		
 		mv.addObject("select", notebiz.selectOne(nno));
 		mv.setViewName("./user_meetinglogdetail");
@@ -65,7 +53,7 @@ public class PageController {
 //서머노트 insertform으로
 	@RequestMapping(value = "/user_meetinglogwrite.do")
 	public String boardWrite() {
-		logger.info("user_meetinglogwrite 페이지로 갈겁니다.");
+		logger.info("user_meetinglogwrite 페이지로");
 		return "user_meetinglogwrite";
 	}
 	
@@ -76,26 +64,16 @@ public class PageController {
 		logger.info("서머노트 insert는 잘 되었나요? dto : "+dto);
 		
 		if(dto.getNtitle() instanceof String) {
-			logger.info("ntitle은 String입니다.");				//당첨
-		} else if (dto.getNtitle() instanceof Object) {
-			logger.info("ntitle은 object입니다.");
-		} else if (dto.getNtitle() == null) { 
-			logger.info("ntitle은 null값입니다.");
+			logger.info("ntitle은 String입니다.");		//당첨
 		} else {
-			logger.info("ntitle은 String도 object도 null도 아닙니다.");
+			logger.info("ntitle은 String이 아닙니다.");
 		}
 
 		int resNno = notebiz.insert(dto);	// 0or1이 아니라 nno번호로 나올거에요
-
-//시퀀스 번호를 seq.nextval, 이런걸로 해당 저장된 값 확인, 그걸 토대로 nno.
-//		notebiz.selectOne(nno);
-		
-		//Stringify사용해서 object -> 문자열로.
 		
 		//처리해주고 화면전환
 		if(resNno > 0) {
 			return "redirect: user_meetinglogdetail.do?nno="+resNno;	//controller로 다시 ...
-//			return "redirect: /user_meetinglogdetail?nno="+ 변수명;
 		}else {
 	    	   logger.info("ㅠ ㅠ 서머노트 insert Controller에서 안넘어감");
 			return "redirect:user_list.do";
@@ -183,6 +161,20 @@ public class PageController {
 		logger.info("여기는 meeting페이지로 넘어가는 컨트롤러입니다.");
 		
 		return "user_meetinglogwrite";
+	}
+	
+	@RequestMapping(value="/feedback.do")
+	public String feedBack() {
+		return "user_feedback";
+	}
+	
+	@RequestMapping(value="/feedback_res.do")
+	public String feedbackRes() {
+		
+//		mv.addObject("feedmv", mv);  //뭘들고 다닐지 보류
+//		mv.setViewName("user_list");
+		
+		return "user_list";
 	}
     
 }

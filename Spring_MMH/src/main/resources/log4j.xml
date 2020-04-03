@@ -38,4 +38,14 @@
 		<appender-ref ref="console" />
 	</root>
 	
+	<!-- 
+		log4j log level
+		-level.FATAL : 치명적인 에러(가 아니면 출력되지 않습니다.)
+		-level.ERROR : 에러
+		-level.WARN  : 경고(경고 이상은 찍어줍니다.)
+		-level.INFO  : 정보(일반적인 정보를 찍어줍니다.)
+		-level.DEBUG : 디버깅 정보
+		-level.TRACE : DEBUG + @(상세정보)
+	 -->
+	
 </log4j:configuration>

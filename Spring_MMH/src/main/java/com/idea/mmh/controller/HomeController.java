@@ -1,5 +1,6 @@
 package com.idea.mmh.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.idea.mmh.model.biz.BoardBiz;
+import com.idea.mmh.model.biz.NoteBiz;
 import com.idea.mmh.model.dto.BoardDto;
+import com.idea.mmh.model.dto.NoteDto;
 import com.idea.mmh.register.biz.MemberBiz;
 import com.idea.mmh.register.dto.MemberDto;
 
@@ -30,7 +33,11 @@ public class HomeController {
 	private BoardBiz biz;
 	@Autowired
 	private MemberBiz mbiz;
-
+	
+	@Autowired
+	private NoteBiz noteBiz;
+	
+	
 	// 얘가 뭔지 불확실하지만 아마,
 	// 로그인 세션 유지중에 등급에 따른 메인페이지로...?
 	@RequestMapping("/grade_main.do") // admin.do -> grade_main.do
@@ -57,9 +64,16 @@ public class HomeController {
 	@RequestMapping("/admin_main.do") // index.do -> admin_main.do
 	public String index(Model model, HttpSession session) {
 		logger.info("select list");
-		System.out.println("controll"+model);
-		model.addAttribute("list", biz.selectList());
-
+		//System.out.println("controll"+model);
+		//model.addAttribute("list", biz.selectList());
+		
+		List<NoteDto> list = noteBiz.selectList();
+		
+		model.addAttribute("list", list);
+		for(NoteDto dto : list) {
+			System.out.println(dto.getNtitle());
+		}
+		
 		return "admin_main";
 	}
 

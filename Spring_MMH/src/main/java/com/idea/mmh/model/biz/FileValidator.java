@@ -6,7 +6,7 @@ import org.springframework.validation.Validator;
 
 import com.idea.mmh.model.dto.UploadFile;
 
-
+//미사용
 
 @Service
 public class FileValidator implements Validator {

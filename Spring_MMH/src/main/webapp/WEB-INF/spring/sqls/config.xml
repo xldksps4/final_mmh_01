@@ -18,10 +18,6 @@ mappers?
 
 -->
 
-<!-- settings태그에 setting 프로퍼티를 추가하면 
-           매퍼에서 jdbcType=VARCHAR와 같은 처리를 매번 해주지 않아도 된다네요.       
-             	       정보 출처 : https://haenny.tistory.com/22
--->
 	<!--  null값과 false가 들어갈 수 있게 허용해주는 setting -->
 	<settings>
 		<setting name="cacheEnabled" value="false"/>
@@ -30,14 +26,12 @@ mappers?
 
 	<typeAliases>
 		<typeAlias type="com.idea.mmh.model.dto.NoteDto" alias="noteDto"/>
-		<typeAlias type="com.idea.mmh.model.dto.PoitDto" alias="poitDto"/>
 		<typeAlias type="com.idea.mmh.register.dto.MemberDto" alias="memberDto"/>
 		<typeAlias type="com.idea.mmh.model.dto.BoardDto" alias="boardDto"/>
 	</typeAliases>
 	<!-- 형님의 memberDto는 없음 -->
 	<mappers>
 		<mapper resource="/mybatis/note-mapper.xml"/>
-		<mapper resource="/mybatis/poit-mapper.xml"/>
 		<mapper resource="/mybatis/register-mapper.xml"/>
 		<mapper resource="/mybatis/board-mapper.xml"/>
 	</mappers>

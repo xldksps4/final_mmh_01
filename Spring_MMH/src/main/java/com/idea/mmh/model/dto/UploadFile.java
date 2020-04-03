@@ -1,7 +1,7 @@
 package com.idea.mmh.model.dto;
 
 import org.springframework.web.multipart.MultipartFile;
-
+//미사용
 public class UploadFile {
 
 	private String name;

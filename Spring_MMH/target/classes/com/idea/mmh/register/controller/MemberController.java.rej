@@ -1,0 +1,9 @@
+diff a/Spring_MMH/src/main/java/com/idea/mmh/register/controller/MemberController.java b/Spring_MMH/src/main/java/com/idea/mmh/register/controller/MemberController.java	(rejected hunks)
+@@ -146,7 +146,6 @@
+ 		boolean admin = true;
+ 		if(res != null) {
+ 			session.setAttribute("login", res);
+-			user.setAttribute("dto", res);
+ //			user.setAttribute("dto", res);			//왜 HttpSession이 두개지?
+ 			check = true;
+ 			if(res.getM_grade().equals("A")) {

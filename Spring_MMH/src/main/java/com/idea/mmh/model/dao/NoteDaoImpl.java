@@ -17,7 +17,7 @@ import com.idea.mmh.model.dto.NoteDto;
 public class NoteDaoImpl implements NoteDao {
 
 	@Autowired
-	private SqlSessionTemplate sqlSession; // SqlSessionTemplate : SqlSessionFactory.OpenSession ... close ���� �˾Ƽ� ���ݴϴ�.
+	private SqlSessionTemplate sqlSession; // SqlSessionTemplate : SqlSessionFactory.OpenSession ... close등을 알아서 처리해줍니다. 
 	
 	private static final Logger logger = LoggerFactory.getLogger(NoteDaoImpl.class);
 	

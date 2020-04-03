@@ -55,7 +55,7 @@ public class NoteBizImpl implements NoteBiz{
 	@Override
 	public String test() {
 		// TODO Auto-generated method stub
-		dao.insert(new NoteDto(450, 0,"transaction","developer","test_test")); //정상적인 코드
+		dao.insert(new NoteDto(450, 0,"transaction","developer","test_test", "sysdate")); //정상적인 코드
 		
 		String test = dao.test();	//오류나는 코드
 		test.length();				//오류가 나야하는 코드
