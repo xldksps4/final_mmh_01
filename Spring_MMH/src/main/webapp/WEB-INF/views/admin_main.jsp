@@ -221,7 +221,7 @@
 			<div class='section1-wrap'>
 				<!-- 창너비$(window).innerWidth()(100%) * 창높이 창너비$(window).innerHeight() -->
 				<h2 class='hidden'>main video</h2>
-				<video id='video1' class='video main-video' autoplay="autoplay"
+				<video id='video1' class='video main-video' autoplay loop muted
 					poster='resources/admin/img/main/GS-OE-kenoa-exclsuive-beach-spa-and-resort.jpg'><!-- 동영상 부재 시 이미지-->
 					<source src='resources/admin/mov/main/mainvideo.mp4' type='video/mp4'>
 				</video>
@@ -298,6 +298,16 @@
 			<div class='section2-wrap'>
 				<!-- 창너비$(window).innerWidth()(50%) * 창높이 auto(좌측높이로 설정) -->
 				<ul class='section2-box-wrap floatclear'>
+					<!-- li태그 기준으로 영역 추가생성가능 -->
+					<li>	
+						<h2 class="h_tag_title">회사 소개</h2>
+						<br/>
+						<ul>
+						<li>MeetingManagementHomepage입니다. </li>
+						<li>회의록 작성을 도와드립니다.</li>
+						<li>※최초 결제 시 무제한 이용 가능합니다.</li>
+						</ul>
+					</li>
 					<li class="table_tag_move">
 						<br/>
 						<h1 class="h_tag_title" >공지사항</h1>
@@ -324,28 +334,9 @@
 							</c:choose>
 						</table>
 					</li>
-					<li>
-						<!-- project 생성 버튼 및 결재 연동 버튼 필요 -->
-						<form id="id_go_to_userlist" action="user_list.do" method="post">
-							<h2 class="h_tag_title">이용 안내사항</h2>
-							<br/>
-							<ul>
-							<li>신규 프로젝트 생성 시 결제가 필요합니다.</li>
-							<li>기존 프로젝트의 경우 사용 기간이 지나면 신규 작성 및 수정은 불가합니다.</li>
-							<li>※단, 사용기간이 지났더라도 기존 프로젝트에서 작성한 문서를 확인할 수 있습니다.</li>
-							</ul>
-							<br/><br/><br/>
-							<input class="input_tag_text" name="pmid" type="text" placeholder="프로젝트 제목을 입력하세요"/>
-							<br/><br/>
-							
-							<input type="button" value="기존 프로젝트 보기" onclick="location.href='user_list.do?opno=450'"/>
-							<input type="submit" value="새 프로젝트 생성"/>
-						</form>
-					</li>
-
-
 				</ul>
 			</div>
+			<!-- 파일경로 : resources/css/img/main_banner/ -->
 			<div id="brandVisual">
 				<ul>
 					<li class="visual_0"><a href="#">배너이미지1</a></li>

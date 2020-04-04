@@ -41,31 +41,34 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 		// 로그인
 		if (
-				request.getRequestURI().endsWith("/loginform.do") ||
-				request.getRequestURI().endsWith("/loginajax.do") ||
-				request.getRequestURI().endsWith("/index.do") ||
-				request.getRequestURI().endsWith("/notice.do") ||
+				request.getRequestURI().endsWith("loginform.do") ||
+				request.getRequestURI().endsWith("loginajax.do") ||
+				request.getRequestURI().endsWith("index.do") ||
+				request.getRequestURI().endsWith("notice.do") ||
 				
-				request.getRequestURI().contains("/idsearch.do") ||
-				request.getRequestURI().contains("/nickcheck.do") ||
-				request.getRequestURI().contains("/idcheck.do") ||
-				request.getRequestURI().contains("/pwmodify.do") ||
-				request.getRequestURI().contains("/signup.do") ||
-				request.getRequestURI().contains("/mabout.do") ||
-				request.getRequestURI().contains("/emailAuthCheck.do") ||
-				request.getRequestURI().contains("/smscheck.do") ||
-				request.getRequestURI().contains("/kakaologin.do") ||
-				request.getRequestURI().contains("/kakaologout.do") ||
-				request.getRequestURI().contains("/kakaoout.do") ||
-				request.getRequestURI().contains("/kakaosignup.do") ||
-				request.getRequestURI().contains("/test.do") ||
-				request.getRequestURI().contains("/map.do") ||
-				request.getRequestURI().contains("/footer.do") ||
-				request.getRequestURI().contains("/header.do") ||
-				request.getRequestURI().contains("/wboard.do") ||
-				request.getRequestURI().contains("/summerwrite.do") ||
-				request.getRequestURI().endsWith("/wSelectOne.do") ||
-				request.getRequestURI().contains("/wDelete.do") 
+				request.getRequestURI().contains("idsearch.do") ||
+				request.getRequestURI().contains("nickcheck.do") ||
+				request.getRequestURI().contains("idcheck.do") ||
+				request.getRequestURI().contains("pwmodify.do") ||
+				request.getRequestURI().contains("signup.do") ||
+				request.getRequestURI().contains("mabout.do") ||
+				request.getRequestURI().contains("emailAuthCheck.do") ||
+				request.getRequestURI().contains("smscheck.do") ||
+				request.getRequestURI().contains("kakaologin.do") ||
+				request.getRequestURI().contains("kakaologout.do") ||
+				request.getRequestURI().contains("kakaoout.do") ||
+				request.getRequestURI().contains("kakaosignup.do") ||
+				request.getRequestURI().contains("test.do") ||
+				request.getRequestURI().contains("map.do") ||
+				request.getRequestURI().contains("footer.do") ||
+				request.getRequestURI().contains("header.do") ||
+				request.getRequestURI().contains("wboard.do") ||
+				request.getRequestURI().contains("summerwrite.do") ||
+				request.getRequestURI().endsWith("wSelectOne.do") ||
+				request.getRequestURI().endsWith("admin_main.do") ||
+				request.getRequestURI().endsWith("user_list.do") ||
+				request.getRequestURI().endsWith("user_write.do") ||
+				request.getRequestURI().contains("wDelete.do") 
 				
 			) {
 				return true; 

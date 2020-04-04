@@ -26,13 +26,13 @@
 	<context:component-scan base-package="com.idea.mmh" />
 	
 	<!-- interceptor -->
-	<!-- <interceptors>
+	<interceptors>
 		<interceptor>
 			<mapping path="/*" />
 			<beans:bean class="com.idea.mmh.common.interceptor.LoginInterceptor"/>
 		</interceptor>
- 	</interceptors> 
-	 -->
+  	</interceptors> 
+	 
 	<!-- transaction -->
     <tx:annotation-driven/>
 	
@@ -40,8 +40,8 @@
 		<beans:bean id="mailSender"	class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<beans:property name="host" value="smtp.gmail.com" />
 		<beans:property name="port" value="587" /><!-- 메일에 사용되는 포트번호는 25 / 465 / 587 중 하나를 선택해야한다. -->
-		<beans:property name="username" value="chergue93@gmail.com" />
-		<beans:property name="password" value="park091012" />
+		<beans:property name="username" value="xldksps4@naver.com" />
+		<beans:property name="password" value="rkswnsqjrj24!" />
 		<beans:property name="defaultEncoding" value="utf-8" />
 		<beans:property name="javaMailProperties">
 			<beans:props>

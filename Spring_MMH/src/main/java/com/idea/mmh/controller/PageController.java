@@ -51,10 +51,10 @@ public class PageController {
 	}
 	
 //서머노트 insertform으로
-	@RequestMapping(value = "/user_meetinglogwrite.do")
+	@RequestMapping(value = "/user_write.do")
 	public String boardWrite() {
-		logger.info("user_meetinglogwrite 페이지로");
-		return "user_meetinglogwrite";
+		logger.info("user_write 페이지로");
+		return "user_write";
 	}
 	
 //서머노트 insertres(save)	
