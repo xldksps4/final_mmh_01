@@ -52,4 +52,10 @@
 			</beans:props>
 		</beans:property>	
 		</beans:bean>
+
+	<!--민지:jsonView를 return값으로 받기위한 order 설정 -->
+	<beans:bean id="beanNameResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<beans:property name="order" value="0" />
+	</beans:bean>
+	<beans:bean id="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView" /> 
 </beans:beans>

@@ -68,6 +68,11 @@ public class LoginInterceptor implements HandlerInterceptor {
 				request.getRequestURI().endsWith("admin_main.do") ||
 				request.getRequestURI().endsWith("user_list.do") ||
 				request.getRequestURI().endsWith("user_write.do") ||
+				request.getRequestURI().endsWith("user_pay_main.do") ||
+				request.getRequestURI().endsWith("kakaoPay.do") ||
+				request.getRequestURI().endsWith("kakaoPaySuccess.do") ||
+				request.getRequestURI().endsWith("kakaoPayCancel.do") ||
+				request.getRequestURI().endsWith("kakaoPaySuccessFail.do") ||
 				request.getRequestURI().contains("wDelete.do") 
 				
 			) {
