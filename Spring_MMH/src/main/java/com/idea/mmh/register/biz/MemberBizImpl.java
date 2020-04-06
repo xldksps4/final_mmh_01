@@ -20,8 +20,8 @@ public class MemberBizImpl implements MemberBiz {
 	}
 
 	@Override
-	public MemberDto selectOne(int myno) {
-		return null;
+	public MemberDto selectOne(int m_no) {
+		return dao.selectOne(m_no);
 	}
 
 	@Override

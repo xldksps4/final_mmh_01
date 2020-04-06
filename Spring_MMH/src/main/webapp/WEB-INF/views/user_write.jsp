@@ -97,16 +97,23 @@
 <body>
 
 	<div>
-	<div style="position: absolute">
+	<div>
 		<!-- 전체 기능영역 -->
 		<div id="summernote" style="float: left;">
 			<!-- 서머노트 영역  -->
 			<div style="width: 60%; margin: auto;">
 				<div>Meeting log</div>
+				<div>
+				${today }
+				</div>
 				<form action="save.do" method="post" id="subMitBtn"
 					style="float: left;">
-					<input id="input_ntitle" type="text" name="ntitle"
-						style="width: 60%;" placeholder="제목을 입력하세요" /> 
+				<div>
+				${user }
+				</div>
+<!-- 					<input id="input_ntitle" type="text" name="ntitle" -->
+<!-- 						style="width: 60%;" value="" />  -->
+					
 					<input type="text" name="nwriter" 
 						style="width: 60%;" placeholder="작성자를 입력하세요" />
 					<!--  진한씨넨 이렇게함
