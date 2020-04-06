@@ -62,13 +62,15 @@ public class LoginInterceptor implements HandlerInterceptor {
 				request.getRequestURI().contains("map.do") ||
 				request.getRequestURI().contains("footer.do") ||
 				request.getRequestURI().contains("header.do") ||
-				request.getRequestURI().contains("wboard.do") ||
+				request.getRequestURI().contains("feedback.do") ||
+				request.getRequestURI().contains("feedback_res.do") ||
 				request.getRequestURI().contains("summerwrite.do") ||
 				request.getRequestURI().endsWith("wSelectOne.do") ||
 				request.getRequestURI().endsWith("admin_main.do") ||
 				request.getRequestURI().endsWith("user_list.do") ||
 				request.getRequestURI().endsWith("user_write.do") ||
-				request.getRequestURI().endsWith("user_write2.do") ||
+				request.getRequestURI().endsWith("user_write_ui.do") ||
+				request.getRequestURI().endsWith("user_meetinglogwrite.do") ||
 				request.getRequestURI().endsWith("register.do") ||
 				request.getRequestURI().endsWith("user_pay_main.do") ||
 				request.getRequestURI().endsWith("kakaoPay.do") ||
@@ -93,7 +95,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 				request.getRequestURI().endsWith(".jpeg") ||
 				request.getRequestURI().endsWith(".png") ||
 				request.getRequestURI().endsWith(".gif") ||
-				request.getRequestURI().endsWith(".gif") ||
+				request.getRequestURI().endsWith(".svn") ||
 				request.getRequestURI().endsWith(".eot") ||
 				request.getRequestURI().endsWith(".ttf") ||
 				request.getRequestURI().endsWith(".woff") ||

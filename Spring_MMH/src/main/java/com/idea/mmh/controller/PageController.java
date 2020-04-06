@@ -40,6 +40,7 @@ public class PageController {
 		return "user_list";
 	}
 	
+	
 	@RequestMapping(value="/user_meetinglogdetail.do")
 	public ModelAndView userMeetinglogdetail(HttpServletRequest request, ModelAndView mv, int nno) {
 		logger.info("mv를 사용해서 user_meetinglogdetail.jsp로");
@@ -174,7 +175,7 @@ public class PageController {
 //		mv.addObject("feedmv", mv);  //뭘들고 다닐지 보류
 //		mv.setViewName("user_list");
 		
-		return "user_list";
+		return "user_feedback_res";
 	}
     
 }

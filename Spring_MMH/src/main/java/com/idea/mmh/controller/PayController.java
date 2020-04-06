@@ -29,6 +29,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.idea.mmh.model.biz.ProjectMainBiz;
 import com.idea.mmh.model.dto.PayDto;
+import com.idea.mmh.register.biz.MemberBiz;
+import com.idea.mmh.register.dto.MemberDto;
 
 /**
  * Handles requests for the application home page.
@@ -37,6 +39,9 @@ import com.idea.mmh.model.dto.PayDto;
 public class PayController {
 	private String payParam;
 	private PayDto payDto;
+	
+	private MemberBiz memberBiz;
+	
 	public PayDto getPayDto() {
 		return payDto;
 	}
@@ -49,6 +54,8 @@ public class PayController {
 
 	@RequestMapping(value = "/user_pay_main.do", method = RequestMethod.GET)
 	public String home2(Locale locale, Model model) {
+		
+		
 		return "user_pay_main";
 	}
 	
