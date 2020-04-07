@@ -11,6 +11,15 @@ public class MemberDto {
 	private String m_address2;
 	private String m_join;
 	private String m_grade;
+	private String m_payment;
+
+	public String getM_payment() {
+		return m_payment;
+	}
+
+	public void setM_payment(String m_payment) {
+		this.m_payment = m_payment;
+	}
 
 	public MemberDto() {
 	}

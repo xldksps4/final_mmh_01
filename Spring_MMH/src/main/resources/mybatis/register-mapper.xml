@@ -12,10 +12,11 @@
 		<result property="m_address2" column="M_ADDRESS2" />
 		<result property="m_join" column="M_JOIN" />
 		<result property="m_grade" column="M_GRADE" />
+		<result property="m_payment" column="M_PAYMENT" />
 	</resultMap>
 	<select id="selectList" resultMap="memberMap">
 		SELECT 
-			M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_ADDRESS2, M_JOIN, M_GRADE
+			M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_ADDRESS2, M_JOIN, M_GRADE, M_PAYMENT
 		FROM 
 			MMH_MEMBER
 		ORDER BY M_NO DESC
@@ -23,7 +24,7 @@
 
 	<select id="selectOne" resultMap="memberMap" parameterType="int">
 		SELECT 
-				M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_ADDRESS2, M_JOIN, M_GRADE
+				M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_ADDRESS2, M_JOIN, M_GRADE, M_PAYMENT
 		FROM 
 			MMH_MEMBER
 		WHERE 
@@ -61,14 +62,14 @@
 	</select>
 
 	<select id="login" parameterType="memberDto" resultType="memberDto">
-		SELECT M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_JOIN, M_GRADE, M_ADDRESS2
+		SELECT M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_JOIN, M_GRADE, M_ADDRESS2, M_PAYMENT
 		FROM MMH_MEMBER
 		WHERE M_ID = #{m_id}
 		AND M_PW = #{m_pw}
 	</select>
 
 	<select id="selectmember" parameterType="String" resultType="memberDto">
-		SELECT M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_JOIN, M_GRADE, M_ADDRESS2
+		SELECT M_NO, M_ID, M_PW, M_NAME, M_EMAIL, M_ADDRESS, M_JOIN, M_GRADE, M_ADDRESS2, M_PAYMENT
 		FROM MMH_MEMBER
 		WHERE M_ID = #{m_id}
 	</select>
@@ -79,6 +80,10 @@
 		WHERE M_ID = #{m_id}
 	</update>
 
+<update id="updatePay" parameterType="String">
+	UPDATE MMH_MEMBER SET M_PAYMENT = 'Y'
+	WHERE M_ID = #{m_id}
+</update>
 
 
 </mapper>
