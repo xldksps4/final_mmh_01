@@ -1,14 +1,22 @@
 package com.idea.mmh.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.expr.Instanceof;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +30,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.idea.mmh.model.biz.NoteBiz;
 import com.idea.mmh.model.dto.NoteDto;
+import com.idea.mmh.register.biz.MemberBiz;
+import com.idea.mmh.register.dto.MemberDto;
+
+import sun.security.jca.GetInstance.Instance;
 /*서머노트 등 글작성 관련 기능 및 페이지 컨트롤러*/
 @Controller
 public class PageController {
@@ -29,22 +41,25 @@ public class PageController {
 	private Logger logger = LoggerFactory.getLogger(PageController.class);
 
 	@Autowired
-	private NoteBiz notebiz;
+	private NoteBiz noteBiz;
+	@Autowired
+	private MemberBiz memberBiz;
 	
 //서머노트list
 	@RequestMapping(value = "/user_list.do")
 	public String userList(Model model) {
 		logger.info("user_list.jsp로");
 		
-		model.addAttribute("selectlist", notebiz.selectList());
+		model.addAttribute("selectlist", noteBiz.selectList());
 		return "user_list";
 	}
+	
 	
 	@RequestMapping(value="/user_meetinglogdetail.do")
 	public ModelAndView userMeetinglogdetail(HttpServletRequest request, ModelAndView mv, int nno) {
 		logger.info("mv를 사용해서 user_meetinglogdetail.jsp로");
 		
-		mv.addObject("select", notebiz.selectOne(nno));
+		mv.addObject("select", noteBiz.selectOne(nno));
 		mv.setViewName("./user_meetinglogdetail");
 		
 		return mv;
@@ -52,16 +67,31 @@ public class PageController {
 	
 //서머노트 insertform으로
 	@RequestMapping(value = "/user_write.do")
-	public String boardWrite() {
+	public String boardWrite(Locale locale, Model model, HttpSession session) {
+		MemberDto dto = (MemberDto) session.getAttribute("login");
 		logger.info("user_write 페이지로");
+//		System.out.println("login은요 : "+ dto);
+//		int res = dto.getM_no();
+		String mId = dto.getM_id();
+//		System.out.println("mId는요 : "+ mId);
+		
+//		System.out.println("getM_no는요 : "+ res);
+		
+		Date date = new Date();
+		SimpleDateFormat format1;		
+		format1 = new SimpleDateFormat("yyyy-MM-dd");
+		
+		
+		
+		model.addAttribute("today", format1.format(date));
+		model.addAttribute("user", mId); // m_id == nwriter <-- jsp에서 ${user.getM_id} 예정
 		return "user_write";
 	}
 	
 //서머노트 insertres(save)	
 	@RequestMapping(value ="/save.do", method = {RequestMethod.POST, RequestMethod.GET})	// button태그에서 보낸 onclick함수 경로
 	public String save(RedirectAttributes redirect, NoteDto dto) {
-//		RedirectAttributes redirect
-		logger.info("서머노트 insert는 잘 되었나요? dto : "+dto);
+		logger.info("서머노트 insert dto 값은?  : "+dto);
 		
 		if(dto.getNtitle() instanceof String) {
 			logger.info("ntitle은 String입니다.");		//당첨
@@ -69,7 +99,7 @@ public class PageController {
 			logger.info("ntitle은 String이 아닙니다.");
 		}
 
-		int resNno = notebiz.insert(dto);	// 0or1이 아니라 nno번호로 나올거에요
+		int resNno = noteBiz.insert(dto);	// 0or1이 아니라 nno번호로 나올거에요
 		
 		//처리해주고 화면전환
 		if(resNno > 0) {
@@ -79,7 +109,7 @@ public class PageController {
 			return "redirect:user_list.do";
 		}
 		//테이블
-		//model.addAttribute("dto", notebiz.insert(dto));
+		//model.addAttribute("dto", noteBiz.insert(dto));
 	}
 	
 	
@@ -97,10 +127,10 @@ public class PageController {
 //    @ResponseBody
 //    public Map<String, Object> save(Model model, NoteDto dto, int opno) { //wbtodono가 내 opno같은 존재인듯
 //		logger.info("값 들어왔는지 확인요" + opno);
-//       notebiz.selectOne(opno);
+//       noteBiz.selectOne(opno);
 //       //글 상세보기 
 //       //wwdto.getWbtodono()
-//	   int res = notebiz.insert(dto);
+//	   int res = noteBiz.insert(dto);
 //	   
 //       logger.info("디티오 찍어보기, nno는 "+dto.getNno()+", opno는 "+dto.getOpno());
 //       
@@ -125,7 +155,7 @@ public class PageController {
     @ResponseBody
     public boolean wDelete(@ModelAttribute("selectno") int nno) {
        
-       int res = notebiz.delete(nno);
+       int res = noteBiz.delete(nno);
        
        if(res > 0) {
           return true;
@@ -141,7 +171,7 @@ public class PageController {
     @PostMapping("/summerwrite.do")
     public String insert(NoteDto dto) {
        
-       int   res = notebiz.insert(dto);
+       int   res = noteBiz.insert(dto);
        if(res > 0) {
           System.out.println("저장완료");
           return "redirect:user_meetinglogdetail.do";	//바로 화면전환
@@ -174,7 +204,7 @@ public class PageController {
 //		mv.addObject("feedmv", mv);  //뭘들고 다닐지 보류
 //		mv.setViewName("user_list");
 		
-		return "user_list";
+		return "user_feedback_res";
 	}
     
 }

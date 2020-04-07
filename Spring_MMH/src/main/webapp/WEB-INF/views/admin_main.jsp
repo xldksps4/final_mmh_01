@@ -76,12 +76,16 @@
       }
    }
 
+<<<<<<< HEAD
   
 	$('#m_pw').keydown(function(e) {
 		if (e.keyCode == '13') {
 			$('#clickE').trigger('click');
 		}
 	});
+=======
+
+>>>>>>> 53c4038004785ec22e1566b3a0e9b88efcca6e44
 </script>
 
 <style type="text/css">
@@ -225,6 +229,16 @@ body {
          <div class='section2-wrap'>
             <!-- 창너비$(window).innerWidth()(50%) * 창높이 auto(좌측높이로 설정) -->
             <ul class='section2-box-wrap floatclear'>
+               <li class="table_tag_move">
+                  <br/>
+                  <h1 class="h_tag_title" >회사소개</h1>
+                  <br/>
+                  <ul>
+                     <li>신규 프로젝트 생성 시 결제가 필요합니다.</li>
+                     <li>기존 프로젝트의 경우 사용 기간이 지나면 신규 작성 및 수정은 불가합니다.</li>
+                     <li>※단, 사용기간이 지났더라도 기존 프로젝트에서 작성한 문서를 확인할 수 있습니다.</li>
+                  </ul>  
+               </li>
                <li class="table_tag_move">
                   <br/>
                   <h1 class="h_tag_title" >공지사항</h1>

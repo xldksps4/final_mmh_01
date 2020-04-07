@@ -24,8 +24,11 @@ public class MemberDto {
 	public MemberDto() {
 	}
 
+	
+
 	public MemberDto(int m_no, String m_id, String m_pw, String m_name, String m_email, String m_address,
-			String m_address2, String m_join, String m_grade) {
+			String m_address2, String m_join, String m_grade, String m_payment) {
+		super();
 		this.m_no = m_no;
 		this.m_id = m_id;
 		this.m_pw = m_pw;
@@ -35,7 +38,10 @@ public class MemberDto {
 		this.m_address2 = m_address2;
 		this.m_join = m_join;
 		this.m_grade = m_grade;
+		this.m_payment = m_payment;
 	}
+
+
 
 	public int getM_no() {
 		return m_no;
@@ -108,12 +114,22 @@ public class MemberDto {
 	public void setM_grade(String m_grade) {
 		this.m_grade = m_grade;
 	}
+	
+	public String getM_payment() {
+		return m_payment;
+	}
+
+	public void setM_payment(String m_payment) {
+		this.m_payment = m_payment;
+	}
+
+
 
 	@Override
 	public String toString() {
 		return "MemberDto [m_no=" + m_no + ", m_id=" + m_id + ", m_pw=" + m_pw + ", m_name=" + m_name + ", m_email="
 				+ m_email + ", m_address=" + m_address + ", m_address2=" + m_address2 + ", m_join=" + m_join
-				+ ", m_grade=" + m_grade + "]";
+				+ ", m_grade=" + m_grade + ", m_payment=" + m_payment + "]";
 	}
 
 }

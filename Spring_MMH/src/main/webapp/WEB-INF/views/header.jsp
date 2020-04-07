@@ -14,6 +14,7 @@
    <link rel="stylesheet" href="resources/css/style1.css"/>
       
    <script src='resources/js/lib/jquery-1.12.4.min.js'></script>
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
    <script src='resources/js/lib/jquery.easing.1.3.js'></script>
 
    <script src='resources/js/section1.js'></script>
@@ -78,6 +79,7 @@
                                 </c:when>   
                             </c:choose>      
                            
+                           <li><a href='user_pay_main.do' class='btn-main'>결제하기(유효성검사)<span></span></a></li>
                            <c:choose>
                                 <c:when test="${login.m_name==null}">                               
                                 </c:when>         
@@ -129,6 +131,7 @@
                <ul class='mobile'>
                   <li>
                      <h1><a href='#' class='mLogoBtn'><img src='resources/img/logo/logo-icon-dh-black.png' alt=''><span>말만해</span></a></h1>
+                     <h1><a href='#' class='mLogoBtn'><span></span></a></h1>
                   </li>
                   <li>
                      <a href='#' class='appBarBtn'>

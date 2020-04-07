@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: rndlt
 Build-Jdk: 1.8.0_231
+=======
+Built-By: 82102
+Build-Jdk: 1.8.0_221
+>>>>>>> 53c4038004785ec22e1566b3a0e9b88efcca6e44
 Created-By: Maven Integration for Eclipse
 

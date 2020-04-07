@@ -4,12 +4,14 @@
     border: 1px solid black;
 }
 .body-container {
-    width: 1000px;
-    background-color: #ff80ff;
+    width: 300px;
+    background-color: #cac9c6;
 }
 .tui-image-editor-controls {
-    min-height: 250px;
-     background-color: #ff80ff;
+    min-height: 300px;
+/*     max-haight: 600px; */
+    background-color: #cac9c6;
+    
 }
 .menu {
     padding: 0;
@@ -25,7 +27,7 @@
 }
 .logo {
     margin: 0 auto;
-    width: 300px;
+    width: 100px;
     vertical-align: middle;
 }
 .header .name {
@@ -43,7 +45,7 @@
     display: inline-block;
     cursor: pointer;
     vertical-align: middle;
-     background-color: #ff80ff;
+     background-color: #cac9c6;
 }
 .menu-item a {
     text-decoration: none;

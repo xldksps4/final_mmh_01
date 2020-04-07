@@ -7,7 +7,7 @@ import com.idea.mmh.register.dto.MemberDto;
 public interface MemberBiz {
 	public List<MemberDto> selectList();
 
-	public MemberDto selectOne(int myno);
+	public MemberDto selectOne(int m_no);
 
 	public int insert(MemberDto dto);
 
