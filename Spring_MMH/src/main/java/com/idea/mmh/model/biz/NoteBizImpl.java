@@ -27,9 +27,9 @@ public class NoteBizImpl implements NoteBiz{
 	}
 
 	@Override
-	public NoteDto selectOne(int nno) {
+	public NoteDto selectOne(NoteDto dto) {
 		// TODO Auto-generated method stub
-		return dao.selectOne(nno);
+		return dao.selectOne(dto);
 	}
 //서머노트 인서트
 	@Override

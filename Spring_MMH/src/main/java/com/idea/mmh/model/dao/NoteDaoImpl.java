@@ -36,11 +36,11 @@ public class NoteDaoImpl implements NoteDao {
 	}
 
 	@Override
-	public NoteDto selectOne(int nno) {
+	public NoteDto selectOne(NoteDto dto) {
 		NoteDto rs = null;
 		
 		try {
-			rs = sqlSession.selectOne(NAMESPACE+"selectOne",nno);
+			rs = sqlSession.selectOne(NAMESPACE+"selectOne",dto);
 		} catch (Exception e) {
 			logger.info("에러 발생 : NoteDaoImpl.selectOne");
 			e.printStackTrace();
@@ -57,7 +57,7 @@ public class NoteDaoImpl implements NoteDao {
 			res = sqlSession.insert(NAMESPACE+"insert",dto); 	//0or1
 			nno = dto.getNno();		//nno번호
 		} catch (Exception e) {
-			logger.info("서머노드 저장중 에러 발생");
+			logger.info("서머노트 저장중 에러 발생");
 			e.printStackTrace();
 		}
 		
