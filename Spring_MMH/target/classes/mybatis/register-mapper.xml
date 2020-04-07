@@ -80,6 +80,11 @@
 		WHERE M_ID = #{m_id}
 	</update>
 
+<update id="updatePay" parameterType="String">
+	UPDATE MMH_MEMBER SET M_PAYMENT = 'Y'
+	WHERE M_ID = #{m_id}
+</update>
+
 
 
 </mapper>

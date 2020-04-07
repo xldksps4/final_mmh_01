@@ -40,72 +40,72 @@ public class LoginInterceptor implements HandlerInterceptor {
 		MemberDto login = (MemberDto) session.getAttribute("login"); // 세션 user 넣어주고
 
 		// 로그인
-		if (
-				request.getRequestURI().endsWith("loginform.do") ||
-				request.getRequestURI().endsWith("loginajax.do") ||
-				request.getRequestURI().endsWith("index.do") ||
-				request.getRequestURI().endsWith("notice.do") ||
-				
-				request.getRequestURI().contains("idsearch.do") ||
-				request.getRequestURI().contains("nickcheck.do") ||
-				request.getRequestURI().contains("idcheck.do") ||
-				request.getRequestURI().contains("pwmodify.do") ||
-				request.getRequestURI().contains("signup.do") ||
-				request.getRequestURI().contains("mabout.do") ||
-				request.getRequestURI().contains("emailAuthCheck.do") ||
-				request.getRequestURI().contains("smscheck.do") ||
-				request.getRequestURI().contains("kakaologin.do") ||
-				request.getRequestURI().contains("kakaologout.do") ||
-				request.getRequestURI().contains("kakaoout.do") ||
-				request.getRequestURI().contains("kakaosignup.do") ||
-				request.getRequestURI().contains("test.do") ||
-				request.getRequestURI().contains("map.do") ||
-				request.getRequestURI().contains("footer.do") ||
-				request.getRequestURI().contains("header.do") ||
-				request.getRequestURI().contains("feedback.do") ||
-				request.getRequestURI().contains("feedback_res.do") ||
-				request.getRequestURI().contains("summerwrite.do") ||
-				request.getRequestURI().endsWith("wSelectOne.do") ||
-				request.getRequestURI().endsWith("admin_main.do") ||
-				request.getRequestURI().endsWith("user_list.do") ||
-				request.getRequestURI().endsWith("user_write.do") ||
-				request.getRequestURI().endsWith("user_write_ui.do") ||
-				request.getRequestURI().endsWith("user_meetinglogwrite.do") ||
-				request.getRequestURI().endsWith("register.do") ||
-				request.getRequestURI().endsWith("user_pay_main.do") ||
-				request.getRequestURI().endsWith("kakaoPay.do") ||
-				request.getRequestURI().endsWith("kakaoPaySuccess.do") ||
-				request.getRequestURI().endsWith("kakaoPayCancel.do") ||
-				request.getRequestURI().endsWith("kakaoPaySuccessFail.do") ||
-				request.getRequestURI().contains("wDelete.do") 
-				
-			) {
-				return true; 
-			}else if(
-				request.getSession().getAttribute("login")!=null
-			) {
-				return true;
-			}
-		
-		// 확장자
-		if (
-				request.getRequestURI().endsWith(".js") ||
-				request.getRequestURI().endsWith(".css") ||
-				request.getRequestURI().endsWith(".jpg") ||
-				request.getRequestURI().endsWith(".jpeg") ||
-				request.getRequestURI().endsWith(".png") ||
-				request.getRequestURI().endsWith(".gif") ||
-				request.getRequestURI().endsWith(".svn") ||
-				request.getRequestURI().endsWith(".eot") ||
-				request.getRequestURI().endsWith(".ttf") ||
-				request.getRequestURI().endsWith(".woff") ||
-				request.getRequestURI().endsWith(".map") 
-			) {
+//		if (
+//				request.getRequestURI().endsWith("loginform.do") ||
+//				request.getRequestURI().endsWith("loginajax.do") ||
+//				request.getRequestURI().endsWith("index.do") ||
+//				request.getRequestURI().endsWith("notice.do") ||
+//				
+//				request.getRequestURI().contains("idsearch.do") ||
+//				request.getRequestURI().contains("nickcheck.do") ||
+//				request.getRequestURI().contains("idcheck.do") ||
+//				request.getRequestURI().contains("pwmodify.do") ||
+//				request.getRequestURI().contains("signup.do") ||
+//				request.getRequestURI().contains("mabout.do") ||
+//				request.getRequestURI().contains("emailAuthCheck.do") ||
+//				request.getRequestURI().contains("smscheck.do") ||
+//				request.getRequestURI().contains("kakaologin.do") ||
+//				request.getRequestURI().contains("kakaologout.do") ||
+//				request.getRequestURI().contains("kakaoout.do") ||
+//				request.getRequestURI().contains("kakaosignup.do") ||
+//				request.getRequestURI().contains("test.do") ||
+//				request.getRequestURI().contains("map.do") ||
+//				request.getRequestURI().contains("footer.do") ||
+//				request.getRequestURI().contains("header.do") ||
+//				request.getRequestURI().contains("feedback.do") ||
+//				request.getRequestURI().contains("feedback_res.do") ||
+//				request.getRequestURI().contains("summerwrite.do") ||
+//				request.getRequestURI().endsWith("wSelectOne.do") ||
+//				request.getRequestURI().endsWith("admin_main.do") ||
+//				request.getRequestURI().endsWith("user_list.do") ||
+//				request.getRequestURI().endsWith("user_write.do") ||
+//				request.getRequestURI().endsWith("user_detail.do") ||
+//				request.getRequestURI().endsWith("user_meetinglogwrite.do") ||
+//				request.getRequestURI().endsWith("register.do") ||
+//				request.getRequestURI().endsWith("user_pay_main.do") ||
+//				request.getRequestURI().endsWith("kakaoPay.do") ||
+//				request.getRequestURI().endsWith("kakaoPaySuccess.do") ||
+//				request.getRequestURI().endsWith("kakaoPayCancel.do") ||
+//				request.getRequestURI().endsWith("kakaoPaySuccessFail.do") ||
+//				request.getRequestURI().contains("wDelete.do") 
+//				
+//			) {
+//				return true; 
+//			}else if(
+//				request.getSession().getAttribute("login")!=null
+//			) {
+//				return true;
+//			}
+//		
+//		// 확장자
+//		if (
+//				request.getRequestURI().endsWith(".js") ||
+//				request.getRequestURI().endsWith(".css") ||
+//				request.getRequestURI().endsWith(".jpg") ||
+//				request.getRequestURI().endsWith(".jpeg") ||
+//				request.getRequestURI().endsWith(".png") ||
+//				request.getRequestURI().endsWith(".gif") ||
+//				request.getRequestURI().endsWith(".svn") ||
+//				request.getRequestURI().endsWith(".eot") ||
+//				request.getRequestURI().endsWith(".ttf") ||
+//				request.getRequestURI().endsWith(".woff") ||
+//				request.getRequestURI().endsWith(".map") 
+//			) {
+//			return true;
+//			} else {
+//				logger.info("인터셉터에서 허용 불가합니다.");
 			return true;
-			} else {
-				logger.info("인터셉터에서 허용 불가합니다.");
-			return false;
-			}
+//			}
 	}
 
 }

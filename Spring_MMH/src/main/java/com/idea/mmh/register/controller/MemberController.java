@@ -157,7 +157,8 @@ public class MemberController {
 		Map<String, Boolean> map = new HashMap<String, Boolean>();
 		map.put("check",check);
 		map.put("admin",admin);
-
+		MemberDto loginDto = (MemberDto) session.getAttribute("login");
+		System.out.println(loginDto);
 		return map;
 	}
 	

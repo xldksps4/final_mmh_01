@@ -67,12 +67,12 @@ public class HomeController {
 		//System.out.println("controll"+model);
 		//model.addAttribute("list", biz.selectList());
 		
-		List<NoteDto> list = noteBiz.selectList();
+//		List<NoteDto> list = noteBiz.selectList();
 		
-		model.addAttribute("list", list);
-		for(NoteDto dto : list) {
-			System.out.println(dto.getNtitle());
-		}
+//		model.addAttribute("list", list);
+//		for(NoteDto dto : list) {
+//			System.out.println(dto.getNtitle());
+//		}
 		
 		return "admin_main";
 	}

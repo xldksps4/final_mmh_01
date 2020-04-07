@@ -17,16 +17,16 @@ import com.idea.mmh.model.dto.NoteDto;
 public class NoteDaoImpl implements NoteDao {
 
 	@Autowired
-	private SqlSessionTemplate sqlSession; // SqlSessionTemplate : SqlSessionFactory.OpenSession ... close등을 알아서 처리해줍니다. 
+	private SqlSessionTemplate sqlSession; 
 	
 	private static final Logger logger = LoggerFactory.getLogger(NoteDaoImpl.class);
 	
 	@Override
-	public List<NoteDto> selectList() {
+	public List<NoteDto> selectList(int M_no) {
 		List<NoteDto> list = new ArrayList<NoteDto>();
 		
 		try {
-			list = sqlSession.selectList(NAMESPACE+"selectList");
+			list = sqlSession.selectList(NAMESPACE+"selectList", M_no);
 		} catch (Exception e) {
 			logger.info("에러 발생 : NoteDaoImpl.selectlist");
 			e.printStackTrace();

@@ -27,16 +27,6 @@
 <!-- js/html2canvas.js -->
 <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
 
-<!-- 이미지 에디터용도 -->
-<link type="text/css"
-	href="https://uicdn.toast.com/tui-color-picker/v2.2.3/tui-color-picker.css"
-	rel="stylesheet">
-<link type="text/css" href="resources/nhnimg/css/service-basic.css"
-	rel="stylesheet">
-<link href="resources/nhnimg/js/theme/white-theme.js">
-<!-- Failed to load resource: the server responded with a status of 404 () 해결 위해서 아래 링크추가, head태크에 profile추가 -->
-<link rel="icon" type="image/png" href="http://example.com/myicon.png">
-
 <script>
 	$(document).ready(function() {
 		$('#summernote').summernote({
@@ -64,7 +54,6 @@
 	//유효성 및 값 보내기
 	function goWrite(frm) {
 		//    console.log(frm)
-
 		//       var nwriter = frm.nwriter.value;
 		var nwriter = $("div[id='nwriter']").val();
 		//       var ntitle = frm.ntitle.value
@@ -138,7 +127,7 @@
 		</form>
 		<div>
 			<div style="float: left">
-				<h4 class="center" id="headline">MMH 음성인식 기능</h4>
+				
 				<div id="info">
 					<p id="info_start">오른쪽 마이크 버튼을 누르면 녹음이 시작됩니다.</p>
 					<p id="info_speak_now">음성인식 중 입니다.</p>
@@ -160,7 +149,7 @@
 						이 브라우저에서는 Web Speech API를 지원하지 않습니다. 로 업그레이드 <a
 							href="//www.google.com/chrome">Chrome</a> 버전 25 이상.
 					</p>
-				</div>
+				</div>				
 				<div class="right">
 					<button id="start_button" onclick="startButton(event)">
 						<img id="start_img" src="./resources/img/mic.gif" alt="Start">

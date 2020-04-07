@@ -10,7 +10,7 @@ public interface NoteDao {
 
 String NAMESPACE = "note.";
 	
-	public List<NoteDto> selectList();
+	public List<NoteDto> selectList(int M_no);
 	public NoteDto selectOne(NoteDto dto);
 	public int insert(NoteDto dto);
 	public int update(NoteDto dto);

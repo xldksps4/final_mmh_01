@@ -33,25 +33,7 @@ $(document).ready(function() {
 </script>
 <body>
 
-	<h2>서머노트 내용(select.ncontent): ${select.ncontent}</h2>
-	<h3>서머노트 내용(select): ${select} }</h3>
 	
-	<div class="aaa">
-	  <div class="bbb">
-        <div class="ccc"></div>
-        <div class="ddd"></div>
-        <div class="eee"></div>
-        <div class="fff"></div>
-        <div class="ggg"></div>
-        <div class="hhh"></div>
-        <div class="iii"></div>
-        <div class="jjj"></div>
-        <div class="kkk"></div>
-        <div class="lll"></div>
-        <div class="mmm"></div>
-        <div class="nnn"></div>
-      </div>
-    </div>
    <section class="section">
       <article id="article_header">
          <div class="div_title">

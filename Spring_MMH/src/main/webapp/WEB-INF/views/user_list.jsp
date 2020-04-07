@@ -33,10 +33,10 @@
 				<c:otherwise>
 					<c:forEach items="${selectlist }" var="dto">
 						<tr>
-							<td>${dto.opno }</td>
+							<td>${dto.nno }</td>
 							<td>${dto.nwriter }</td>
 							<td><a
-								href="user_meetinglogdetail.do?opno=450&nno=${dto.nno}">${dto.ntitle }</a></td>
+								href="user_detail.do?nno=${dto.nno}&nwriter=${dto.nwriter}">${dto.ntitle }</a></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>
