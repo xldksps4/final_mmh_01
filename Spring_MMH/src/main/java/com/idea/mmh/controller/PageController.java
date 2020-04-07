@@ -56,10 +56,14 @@ public class PageController {
 	
 	
 	@RequestMapping(value="/user_meetinglogdetail.do")
-	public ModelAndView userMeetinglogdetail(HttpServletRequest request, ModelAndView mv, int nno) {
+	public ModelAndView userMeetinglogdetail(HttpServletRequest request, ModelAndView mv, int nno, String nwriter) {
 		logger.info("mv를 사용해서 user_meetinglogdetail.jsp로");
 		
-		mv.addObject("select", noteBiz.selectOne(nno));
+		NoteDto dto = new NoteDto();
+		dto.setNno(nno);
+		dto.setNwriter(nwriter);
+		
+		mv.addObject("select", noteBiz.selectOne(dto));
 		mv.setViewName("./user_meetinglogdetail");
 		
 		return mv;
@@ -101,9 +105,10 @@ public class PageController {
 
 		int resNno = noteBiz.insert(dto);	// 0or1이 아니라 nno번호로 나올거에요
 		
+		
 		//처리해주고 화면전환
 		if(resNno > 0) {
-			return "redirect: user_meetinglogdetail.do?nno="+resNno;	//controller로 다시 ...
+			return "redirect: user_meetinglogdetail.do?nno="+resNno+"&nwriter="+dto.getNwriter();	//controller로 다시 ...
 		}else {
 	    	   logger.info("ㅠ ㅠ 서머노트 insert Controller에서 안넘어감");
 			return "redirect:user_list.do";

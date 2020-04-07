@@ -23,10 +23,10 @@
   </select>
   	
   <!-- 글 상세보기 -->
-  <select id="selectOne" parameterType="int" resultMap="noteMap">
+  <select id="selectOne" parameterType="noteDto" resultMap="noteMap">
   	SELECT O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT, 
-  	TO_CHAR(N_TODAY, 'YYYY-MM-DD') AS N_TODAY  
-  	FROM MMH_NOTE WHERE O_P_NO=450 AND N_NO=#{nno}
+  	TO_CHAR(N_TODAY, 'YYYY-MM-DD') AS N_TODAY, N_IMG_PATH
+  	FROM MMH_NOTE WHERE O_P_NO=(SELECT M_NO FROM MMH_MEMBER WHERE M_ID=#{nwriter}) AND N_NO=#{nno}
   </select>
   
   <!-- 게시판 insert -->
@@ -34,8 +34,8 @@
     <selectKey keyProperty="nno" order="BEFORE" resultType="int">
 		SELECT MMH_NOTE_SEQ.NEXTVAL FROM DUAL
 	</selectKey>
-  	INSERT INTO MMH_NOTE (O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT, N_TODAY 
-  	VALUES(450, #{nno}, #{ntitle}, #{nwriter}, #{ncontent}, TO_DATE(SYSDATE, 'YYYY-MM-DD'))
+  	INSERT INTO MMH_NOTE (O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT, N_TODAY, N_IMG_PATH) 
+  	VALUES((SELECT M_NO FROM MMH_MEMBER WHERE M_ID=#{nwriter}), #{nno}, #{ntitle}, #{nwriter}, #{ncontent}, TO_DATE(SYSDATE, 'YYYY-MM-DD'), NULL) 
   </insert>
   
   <update id="update" parameterType="noteDto">
