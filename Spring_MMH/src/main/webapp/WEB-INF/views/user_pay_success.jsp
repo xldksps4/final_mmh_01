@@ -8,21 +8,41 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
 <script type="text/javascript">
+	function goback() {
+		opener.location.href = 'admin_main.do';
+		close();
+	}
 </script>
 </head>
 <body>
-
 	
-	카카오페이 결제 성공
+	<h1>${login.m_id}</h1>
+	<h1>카카오페이 결제 완료</h1>
 	<br/><br/>
-	결제정보
-	<br/>
-	결제일시:     [[${info.approved_at}]]<br/>
-	주문번호:    [[${info.partner_order_id}]]<br/>
-	상품명:    [[${info.item_name}]]<br/>
-	상품수량:    [[${info.quantity}]]<br/>
-	결제금액:    [[${info.amount.total}]]<br/>
-	결제방법:    [[${info.payment_method_type}]]<br/>
+	
+	<h3><b>결제정보</b></h3>
+	<table border="1">
+	<tr>
+		<th>결제일시:</th>
+		<td>[[${info.approved_at}]]</td>
+	</tr>
+	<tr>		
+		<th>주문번호:</th>
+		<td>[[${info.partner_order_id}]]</td>
+	</tr>		
+		
+	<tr>		
+		<th>상품수량:</th>
+		<td>[[${info.quantity}]]</td>
+	</tr>		
+		
+	<tr>		
+		<th>결제금액:</th>
+		<td>[[${info.amount.total}]]</td>
+	</tr>		
+	</table>
+	<br>
+		<input type="button" value="X back" onclick="goback();" style="border: none; float: right; bottom:0px; margin-bottom: 0px;">
 
 </body>
 </html>

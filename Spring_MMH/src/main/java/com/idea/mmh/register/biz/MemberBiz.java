@@ -23,5 +23,8 @@ public interface MemberBiz {
 	public MemberDto selectMember(String id);
 	
 	public int updateMember(MemberDto dto);
+	//결제 시, m_payment 데이터 Y로 업데이트
+	public int updatePay(String m_id);
+	
 	
 }

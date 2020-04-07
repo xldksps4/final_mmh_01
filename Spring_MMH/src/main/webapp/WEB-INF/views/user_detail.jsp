@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로젝트 리스트 및 피드백 보기 페이지</title>
+<title>회의록</title>
 <link rel="stylesheet" href="resources/board/css/user_write.css">
 
 <!-- include libraries(jQuery, bootstrap) -->
@@ -40,63 +40,31 @@
 <script>
 	$(document).ready(function() {
 		$('#summernote').summernote({
-			placeholder : '회의 내용을 기록하세요',
+			placeholder : '작성된 내용이 없습니다.',
 			height : 300, //에디터 높이
 			minHeight : 370, //최소 높이
 			maxHeight : null, //최대 높이
 			focus : true, // 에디터 로딩 후 포커스 맞출지 여부
 			lang : 'ko-KR' // 언어(한글)
 		});
-		//서머노트에 text 쓰기     
-		//      $('#summernote').summernote('insertText',content);
 		//서머노트 쓰기 비활성화
-		//     $('#summernote').summernote('disable');
-		//서머노트 쓰기 활성화
-		//     $('#summernote').summernote('enable');
-		//서머노트 리셋
-		//     $('#summernote').summernote('reset');
-		//마지막으로 한 행동 취소
-		//     $('#summernote').summernote('undo');
-		//앞으로 가기
-		//     $('#summernote').summernote('redo');
+		$('#summernote').summernote('disable');
 	});
-
+/*
 	//유효성 및 값 보내기
 	function goWrite(frm) {
-		//    console.log(frm)
 
-		//       var nwriter = frm.nwriter.value;
 		var nwriter = $("div[id='nwriter']").val();
-		//       var ntitle = frm.ntitle.value
 		var ntitle = $("input[name='ntitle']").val();
 		var ncontent = frm.ncontent.value; //가끔 구문 인식이 안될 때가 있음.
 // 		var ncontent = $("textarea[name='ncontent']").val(); //그때 대체사용할 구문
 
-		//    if (ntitle.trim() == ''){
-		//       document.getElementById('input_ntitle').value = '<p>제목없음</p>';
-		// //       document.getElementById('input_ntitle').innerText = '<p>제목없음</p>';
-		// //       document.getElementById('input_ntitle').innerHTML = '<p>제목없음</p>';
-		//       alert("제목이 없어 '이름없음'으로 등록되었습니다.");
-		//        return true;
-		//    }
-		if (ncontent.trim() == '') {
-			alert("내용을 입력해주세요");
-			return false;
-		}
-
-		//    console.log('서머노트 유효성검사, nno(log 4 中 1) : '+ nno);
-		console.log('서머노트 유효성검사, ntitle(log 4中2) : ' + ntitle);
-		console.log('서머노트 유효성검사, nwriter(log 4 中 3) : ' + nwriter);
-		console.log('서머노트 유효성검사, ncontent(log 4中 4) : ' + ncontent);
-		alert('저장할게요?');
-		//   frm.submit();
 		document.getElementById('subMitBtn').submit();
 
 	}
-
-	//var div = document.createElement('div');
-
+*/
 	//-----------------------------------------------------------------------------//
+
 </script>
 <title>회의록 작성</title>
 <%@ include file="header.jsp"%>
@@ -106,7 +74,7 @@
 	<div>
 		<!-- 전체 기능영역 -->
 		<div>Meeting log</div>
-		<div>${today }</div>
+		<div>${select.ntoday }</div>
 		<form action="save.do" method="post" id="subMitBtn"
 			style="float: left;">
 			<input type="text" name="nwriter" value="${user }">

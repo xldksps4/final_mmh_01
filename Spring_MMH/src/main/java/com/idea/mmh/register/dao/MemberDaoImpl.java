@@ -126,4 +126,8 @@ public class MemberDaoImpl implements MemberDao {
 		
 		return res;
 	}
+	@Override
+	public int updatePay(String m_id) {
+		return sqlSession.update(NAMESPACE+"updatePay", m_id);
+	}
 }

@@ -60,4 +60,9 @@ public class MemberBizImpl implements MemberBiz {
 		// TODO Auto-generated method stub
 		return dao.updateMember(dto);
 	}
+	
+	@Override
+	public int updatePay(String m_id) {
+		return dao.updatePay(m_id);
+	}
 }

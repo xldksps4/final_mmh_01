@@ -24,4 +24,6 @@ public interface MemberDao {
 	public MemberDto selectMember(String id);
 	
 	public int updateMember(MemberDto dto);
+	
+	public int updatePay(String m_id);
 }
