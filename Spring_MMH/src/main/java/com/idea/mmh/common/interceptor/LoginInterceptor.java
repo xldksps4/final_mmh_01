@@ -49,6 +49,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 				request.getRequestURI().contains("register.do") ||
 				request.getRequestURI().contains("nickcheck.do") ||
 				request.getRequestURI().contains("idcheck.do") ||
+				request.getRequestURI().contains("idCheck.do") ||
 				request.getRequestURI().contains("pwmodify.do") ||
 				request.getRequestURI().contains("signup.do") ||
 				request.getRequestURI().contains("mabout.do") ||
