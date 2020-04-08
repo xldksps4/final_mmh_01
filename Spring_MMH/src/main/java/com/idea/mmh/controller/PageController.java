@@ -78,7 +78,7 @@ public class PageController {
 
 		Date date = new Date();
 		SimpleDateFormat format1;
-		format1 = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
+		format1 = new SimpleDateFormat("yyyy-MM-dd");
 
 		model.addAttribute("today", format1.format(date));
 		model.addAttribute("user", mId); // m_id == nwriter <-- jsp에서 ${user.getM_id} 예정
@@ -97,7 +97,6 @@ public class PageController {
 		} else {
 			logger.info("ntitle은 String이 아닙니다.");
 		}
-
 		int resNno = noteBiz.insert(dto); // 0or1이 아니라 nno번호로 나올거에요
 
 		// 처리해주고 화면전환
@@ -116,8 +115,11 @@ public class PageController {
 	public ModelAndView userMeetinglogdetail(HttpSession session, ModelAndView mv, NoteDto dto) {
 		logger.info("mv를 사용해서 user_detail.jsp로");
 		MemberDto memberDto = (MemberDto) session.getAttribute("login");
-		System.out.println(memberDto);
+//		System.out.println(memberDto);
 		int mNo = memberDto.getM_no();
+		
+//		String ntoday = dto.getNtoday();
+//		System.out.println("오늘 날짜입니다 . ::::: "+ ntoday);
 		
 		mv.addObject("dto", noteBiz.selectOne(dto));
 		System.out.println("selectOne dto는요" + noteBiz.selectOne(dto));
