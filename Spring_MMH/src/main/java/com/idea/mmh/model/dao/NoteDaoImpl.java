@@ -34,6 +34,13 @@ public class NoteDaoImpl implements NoteDao {
 		
 		return list;
 	}
+	
+	@Override
+	public List<NoteDto> calList(String m_id) {
+		List<NoteDto> list = new ArrayList<NoteDto>();
+		list = sqlSession.selectList(NAMESPACE+"calList", m_id);
+		return list;
+	}
 
 	@Override
 	public NoteDto selectOne(NoteDto dto) {
@@ -91,11 +98,13 @@ public class NoteDaoImpl implements NoteDao {
 		
 		return res;
 	}
-
+	
 	@Override
 	public String test() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

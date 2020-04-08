@@ -23,6 +23,12 @@
   	ORDER BY N_NO DESC
   </select>
   	
+    <!-- 캘린더 조회용 -->
+  <select id="calList" resultMap="noteMap" parameterType="String">
+  SELECT O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT, N_TODAY 
+  	FROM MMH_NOTE WHERE N_WRITER = #{m_id}
+  </select>
+  	
   <!-- 글 상세보기 -->
   <select id="selectOne" parameterType="noteDto" resultMap="noteMap">
   	SELECT O_P_NO, N_NO, N_TITLE, N_WRITER, N_CONTENT, 

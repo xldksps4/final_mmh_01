@@ -1,46 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회의록</title>
-<link rel="stylesheet" href="resources/board/css/user_write.css">
-
+<title>글보기, 화면 캡쳐 및 페이지 드로잉</title>
+<!-- ----------------서머노트---------------- -->
 <!-- include libraries(jQuery, bootstrap) -->
 <link
-   href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=1"
-   rel="stylesheet">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=1"
+	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script
-   src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- include summernote css/js-->
 <link
-   href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css"
-   rel="stylesheet">
+	href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css"
+	rel="stylesheet">
 <script
-   src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+	src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 <!-- include summernote-ko-KR -->
 <script src="resources/board/js/summernote-ko-KR.js"></script>
+<!-- ----------------화면 캡쳐---------------- -->
 <!-- js/html2canvas.js -->
 <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
-
-<!-- 이미지 에디터용도 -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-alpha1/html2canvas.js"></script>
+<!-- ----------------토스트 이미지 에디터---------------- -->
 <link type="text/css"
-   href="https://uicdn.toast.com/tui-color-picker/v2.2.3/tui-color-picker.css"
-   rel="stylesheet">
+	href="https://uicdn.toast.com/tui-color-picker/v2.2.3/tui-color-picker.css"
+	rel="stylesheet">
 <link type="text/css" href="resources/nhnimg/css/service-basic.css"
-   rel="stylesheet">
+	rel="stylesheet">
 <link href="resources/nhnimg/js/theme/white-theme.js">
 <!-- Failed to load resource: the server responded with a status of 404 () 해결 위해서 아래 링크추가, head태크에 profile추가 -->
-<link rel="icon" type="image/png" href="http://example.com/myicon.png">
+<!-- <link rel="icon" type="image/png" href="http://example.com/myicon.png"> -->
 
-<!-- 이미지 캡쳐 -->
-<script
-   src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-alpha1/html2canvas.js"></script>
+
 <script type="text/javascript">
+//----------------서머노트----------------//
+$(document).ready(function() {
+    $('#summernote').summernote({
+       placeholder : '작성된 내용이 없습니다.',
+       height : 300, //에디터 높이
+       minHeight : 370, //최소 높이
+       maxHeight : null, //최대 높이
+       focus : true, // 에디터 로딩 후 포커스 맞출지 여부
+       lang : 'ko-KR' // 언어(한글)
+    });
+    //서머노트 쓰기 비활성화
+    $('#summernote').summernote('disable');
+ });
+
+//----------------화면 캡쳐----------------//
 function bodyShot() {
     //전체 스크린 샷하기
     html2canvas(document.body)
@@ -110,86 +123,54 @@ function saveAs(uri, filename) {
     }
 }
 
-   $(document).ready(function() {
-      $('#summernote').summernote({
-         placeholder : '작성된 내용이 없습니다.',
-         height : 300, //에디터 높이
-         minHeight : 370, //최소 높이
-         maxHeight : null, //최대 높이
-         focus : true, // 에디터 로딩 후 포커스 맞출지 여부
-         lang : 'ko-KR' // 언어(한글)
-      });
-      //서머노트 쓰기 비활성화
-      $('#summernote').summernote('disable');
-   });
-/*
-   //유효성 및 값 보내기
-   function goWrite(frm) {
+   
 
-      var nwriter = $("div[id='nwriter']").val();
-      var ntitle = $("input[name='ntitle']").val();
-      var ncontent = frm.ncontent.value; //가끔 구문 인식이 안될 때가 있음.
-//       var ncontent = $("textarea[name='ncontent']").val(); //그때 대체사용할 구문
-
-      document.getElementById('subMitBtn').submit();
-
-   }
-*/
-   //-----------------------------------------------------------------------------//
 
 </script>
-
-<title>회의록 작성</title>
 
 <%@ include file="header.jsp"%>
 
 </head>
 <body>
+	<!-- 화면 캡쳐 사용 위해서 필수적인 요소 id && class  -->
+	<div class="container" id='container' style="float: left; width: 756px; height: 1123px;">
+      <div class="btn_capture">
+		<div>Meeting log</div>
+		<div>${dto.ntoday }</div>
+		<!-- 서머노트 기능영역 -->
+		<!--       <form action="save.do" method="post" id="subMitBtn" -->
+		<!--          style="float: left;"> -->
+		<input type="text" name="nwriter" value="${dto.nwriter }" /> 
+		<input type="text" name="ntitle"  value="${dto.ntitle} }" style="width: 60%;" />
+		<div id="wrap-ntextarea">
+			<!--             <div id="summernote" style="float: left;"> -->
+			<!--                <div style="width: 60%; margin: auto;"> -->
+			<!--                   <div class="summernotebody"> -->
+			<textarea id="summernote" name="ncontent">${dto.ncontent }</textarea>
+			<!--                   </div> -->
+			<!--                </div> -->
+			<!--             </div> -->
+		</div>
+		<!-- 서머노트 종료 -->
+		<input type="button" value="삭제" style="float: right;"
+			onclick="location.href='ndelete.do?nno=${dto.nno}'" /> 
+		<input type="button" value="목록"
+			onclick="location.href='user_list.do?opno=${dto.opno}&nno=${dto.nno }'" />
+		<!--       </form> -->
+	  <button onclick=bodyShot()>전체캡쳐</button>
+	<button onclick=partShot()>부분캡쳐</button>
+	  </div>
+	</div>
+<!-- 서머노트 기능영역 종료 -->
 
-   <div class="container" id='container'>
-      <!-- 전체 기능영역 -->
-      <div>Meeting log</div>
-      <div>${dto.ntoday }</div>
-<!--       <form action="save.do" method="post" id="subMitBtn" -->
-<!--          style="float: left;"> -->
-         <input type="text" name="nwriter" value="${dto.nwriter }"> <input
-            type="text" name="ntitle" style="width: 60%;"
-            value="${dto.ntitle} }" />
-
-         <div id="wrap-ntextarea">
-            <!-- 서머노트 영역  -->
-            <!--             <div id="summernote" style="float: left;"> -->
-            <!--                <div style="width: 60%; margin: auto;"> -->
-            <!--                   <div class="summernotebody"> -->
-            <textarea id="summernote" name="ncontent">${dto.ncontent }</textarea>
-            <!--                   </div> -->
+<!-- 화면 캡쳐 결과물이 canvas태그에서 보여진다. -->
+	<div style="float: right;">
+	<canvas id="canvas" style="float: left; 
+	 border: 1px solid #d3d3d3;"></canvas>
+	</div>
 
 
-            <!--                </div> -->
-            <!--             </div> -->
-         </div>
-         <!-- 서머노트 종료 -->
-         <input type="button" value="삭제" style="float: right;" onclick= "location.href='ndelete.do?nno=${dto.nno}'"  />
-         <input type="button" value="목록" onclick="location.href='user_list.do?opno=${dto.opno}&nno=${dto.nno }'" />
-
-<!--       </form> -->
-   </div>
-
-
-   <!-- 서머노트 기능영역 종료 -->
-      
-      <button onclick=bodyShot()>전체캡쳐</button>
-            <button onclick=partShot()>부분캡쳐</button>
-        <!--                           --> 
-         
-         
-         
-         
-         <canvas id="canvas" width="900" height="600"style="border:1px solid #d3d3d3;"></canvas>
-         
-         
-         
-        
+<!-- width: 756px; height: 1123px;  -->
 
 </body>
 </html>

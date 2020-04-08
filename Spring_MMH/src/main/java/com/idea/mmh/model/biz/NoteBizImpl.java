@@ -53,6 +53,12 @@ public class NoteBizImpl implements NoteBiz{
 	}
 
 	@Override
+	public List<NoteDto> calList(String m_id) {
+		// TODO Auto-generated method stub
+		return dao.calList(m_id);
+	}
+	
+	@Override
 	public String test() {
 		// TODO Auto-generated method stub
 		dao.insert(new NoteDto(450, 0,"transaction","developer","test_test", "sysdate")); //정상적인 코드

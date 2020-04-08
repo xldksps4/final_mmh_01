@@ -15,7 +15,7 @@ String NAMESPACE = "note.";
 	public int insert(NoteDto dto);
 	public int update(NoteDto dto);
 	public int delete(int nno);
-	
+	public List<NoteDto> calList(String m_id);
 	public String test();
 	
 	
