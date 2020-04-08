@@ -13,10 +13,13 @@
    <link rel='stylesheet' href='resources/css/reponsive.css'>
    <link rel="stylesheet" href="resources/css/style1.css"/>
       
-<!--    <script src='resources/js/lib/jquery-1.12.4.min.js'></script> -->
    <script src='resources/js/lib/jquery.easing.1.3.js'></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+   <script src='resources/js/header.js'></script>
+   <script src="resources/js/script1.js"></script>
    <script src='resources/js/section1.js'></script>
+   <script src='resources/js/section2.js'></script>
    <meta charset="UTF-8">
 
 </head>
@@ -66,18 +69,18 @@
                            
                             <c:choose>
                                 <c:when test="${login.m_name!=null}">
-                                	<c:choose>
-										<c:when test="${login.m_name!='' }">
-											<c:choose>
-												<c:when test="${login.m_payment eq 'N'}">
-					                                 <li><a href='user_pay_main.do' class='btn-main'>회의록(결제필요)<span></span></a></li>
-												</c:when>
-												<c:otherwise>
-													 <li><a href='user_list.do' class='btn-main'>회의록<span></span></a></li>
-												</c:otherwise>
-											</c:choose>										
-										</c:when>                                	
-                                	</c:choose>
+                                   <c:choose>
+                              <c:when test="${login.m_name!='' }">
+                                 <c:choose>
+                                    <c:when test="${login.m_payment eq 'N'}">
+                                                <li><a href='user_pay_main.do' class='btn-main'>회의록(결제필요)<span></span></a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li><a href='user_list.do' class='btn-main'>회의록<span></span></a></li>
+                                    </c:otherwise>
+                                 </c:choose>                              
+                              </c:when>                                   
+                                   </c:choose>
                                 </c:when>   
                             </c:choose>      
                            

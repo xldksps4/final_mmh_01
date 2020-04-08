@@ -8,26 +8,19 @@
 <meta charset="UTF-8">
 <title>프로젝트 리스트 및 피드백 보기 페이지</title>
 <link rel="stylesheet" href="resources/board/css/user_write.css">
-
 <!-- include libraries(jQuery, bootstrap) -->
-<link
-   href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=1"
-   rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ver=1" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script
-   src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- include summernote css/js-->
-<link
-   href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css"
-   rel="stylesheet">
-<script
-   src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
 <!-- include summernote-ko-KR -->
 <script src="resources/board/js/summernote-ko-KR.js"></script>
 <!-- js/html2canvas.js -->
 <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script> -->
 
-<script>
+<script type="text/javascript">
    $(document).ready(function() {
       $('#summernote').summernote({
          placeholder : '회의 내용을 기록하세요',
@@ -523,5 +516,6 @@ var langs =
      email_info.style.display = 'none';
    }
 </script>
+<%@ include file="footer.jsp" %> 
 </body>
 </html>

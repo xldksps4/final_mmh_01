@@ -78,7 +78,7 @@ public class PageController {
 
 		Date date = new Date();
 		SimpleDateFormat format1;
-		format1 = new SimpleDateFormat("yyyy-MM-dd");
+		format1 = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
 
 		model.addAttribute("today", format1.format(date));
 		model.addAttribute("user", mId); // m_id == nwriter <-- jsp에서 ${user.getM_id} 예정
