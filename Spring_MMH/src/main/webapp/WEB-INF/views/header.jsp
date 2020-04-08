@@ -70,8 +70,11 @@
 										<c:when test="${login.m_name!='' }">
 											<c:choose>
 												<c:when test="${login.m_payment eq 'N'}">
-					                                 <li><a href='user_pay_main.do' class='btn-main'>결제하기<span></span></a></li>
+					                                 <li><a href='user_pay_main.do' class='btn-main'>회의록(결제필요)<span></span></a></li>
 												</c:when>
+												<c:otherwise>
+													 <li><a href='user_list.do' class='btn-main'>회의록<span></span></a></li>
+												</c:otherwise>
 											</c:choose>										
 										</c:when>                                	
                                 	</c:choose>
